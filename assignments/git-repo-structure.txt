@@ -1,0 +1,106 @@
+blueyonder-javabootcamp-jan2025
+
+	|
+	|____	labs
+			|
+			|__java
+					|
+					|___ java-labs
+			|
+			|__sboot
+					|
+					|___ sboot-core-labs
+					|
+					|___ sboot-rest-labs
+			|
+			|__scloud
+					|
+					|___ scloud-**-labs
+						
+			|__frontend
+					|
+					|___ javascript-labs
+					|
+					|___ typescript-labs
+					|
+					|___ react-**-labs
+
+			|__cloud
+					|
+					|___ azure-**-labs
+
+
+	|
+	|____ 	assignments
+				|
+				|__java
+					|
+					|___java-assignments								
+					|
+					|___bankingapp-with-arrays				
+										
+					|___bankingapp-with-collection
+					|
+					|___bankingapp-with-collection-stats
+					|					
+					 __ bankingapp-with-impexp-thread
+					|
+					 __ bankingapp-with-lamexp-stream-stats
+					|
+					 __ bankingapp-with-jdbc
+					|
+					 __ bankingapp-with-junit
+				|
+				|__spring
+					|
+					|___bankingapp-with-spring-core-jdbc
+					|
+					|___bankingapp-with-spring-rest
+				|
+				|__sboot
+					|
+					|___bankingapp-with-sboot-rest-jdbc-temp
+					|
+					|___bankingapp-with-sboot-rest-jpa
+
+	|
+	|____ 	capstone
+					|
+					|___ ecomapp
+						   |_____ product-service
+						   |
+						   |_____ category-service
+						   |
+						   |_____ registry-service
+						   |
+						   |_____ gateway-service
+						   |
+						   |_____ auth-service
+						   |
+						   |_____ admin-service
+					   	   |
+						   |_____ ecomapp-ui
+
+						
+					|
+					|___ bankingapp
+						   |
+						   |_____ account-service
+						   |
+						   |_____ transaction-service
+						   |
+						   |_____ fund-transfer-service
+						   |
+						   |_____ registry-service
+						   |
+						   |_____ gateway-service
+						   |
+						   |_____ config-service
+						   |
+						   |_____ auth-service
+						   |
+						   |_____ admin-service
+						   |
+						   |_____ bankingapp-ui
+
+				

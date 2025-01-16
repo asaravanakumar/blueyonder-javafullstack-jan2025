@@ -5,7 +5,9 @@ blueyonder-javabootcamp-jan2025
 			|
 			|__java
 					|
-					|___ java-labs
+					|___ core-java-labs
+					|
+					|___ adv-java-labs
 			|
 			|__sboot
 					|

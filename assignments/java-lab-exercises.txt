@@ -1,0 +1,30 @@
+EXERCISE 01: Write a Java program to convert temperature from Celsius to Fahrenheit degrees.
+Test Data
+Input a degree in Celsius: 100.0
+Expected Output:
+100.0 degree Celsius is equal to 212 in Fahrenheit
+
+java CelsiusToFahrenheit.java 100
+
+
+
+
+EXERCISE 02: Write a Java program for temperature conversion with below options.
+
+TempConverterApp.java
+
+Welcome to Temperature Converter App!!!
+
+1) Celsius to Fahrenheit
+2) Fahrenheit to Celsius
+3) Exit
+
+Enter the Option:
+
+(if option 1) Enter the value in Celsius:
+(if option 2) Enter the value in Fahrenheit:
+
+Print the the converted temperature
+
+(If option 3) Thank you!!
+

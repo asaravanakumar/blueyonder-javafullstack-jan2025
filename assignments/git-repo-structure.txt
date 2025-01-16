@@ -37,7 +37,10 @@ blueyonder-javabootcamp-jan2025
 				|
 				|__java
 					|
-					|___java-assignments								
+					|___java-assignments
+							|__ Day1Assignment1.java
+							|__ Day1Assignment2.java
+									
 					|
 					|___bankingapp-with-arrays				
 										

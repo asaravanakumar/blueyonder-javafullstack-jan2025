@@ -1,0 +1,8 @@
+
+ASSIGNMENT 01: Build Java Console based Banking App which below functionalities using Arrays
+				1] Add Account
+				2] View All Accounts
+				3] View Account
+				4] Update Account
+				5] Delete Account
+				6] Exit

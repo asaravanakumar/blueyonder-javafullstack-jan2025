@@ -28,3 +28,34 @@ Print the the converted temperature
 
 (If option 3) Thank you!!
 
+
+EXERCISE 03:  Write a Java program to reverse a string.
+
+Input Data: Welcome to Java Training
+
+Expected Output: gniniarT avaJ ot emocleW
+
+
+EXERCISE 04:  Write a Java program to sort the given set of numbers
+
+Input Data: 30, 50, 20, 10, 50, 40
+
+Expected Output: 10, 20, 30, 40, 50, 60
+
+
+EXERCISE 05:  Write a Java program to sort the given set of strings
+
+Input Data: Java, Simple, ObjectOriented, Threaded, Dynamic, Secure, Language
+
+Expected Output: Dynamic, Java, Language, ObjectOriented, Secure, Threaded
+
+
+EXERCISE 06: Write an Account Manager program with below options with an ability to read/write the details from/to the console
+
+1. Create Account
+2. Update Account
+3. View Account
+4. Deposit Amount
+5. Withdraw Amount
+6. Close Account
+7. Exit

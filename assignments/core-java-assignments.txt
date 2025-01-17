@@ -1,5 +1,5 @@
 
-ASSIGNMENT 01: Build Java Console based Banking App which below functionalities using Arrays
+ASSIGNMENT 01: Build Java Console based Banking App which below functionalities using Arrays (bankingapp-with-arrays)
 				1] Add Account
 				2] View All Accounts
 				3] View Account

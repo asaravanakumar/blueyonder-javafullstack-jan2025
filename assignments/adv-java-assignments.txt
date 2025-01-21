@@ -1,0 +1,30 @@
+		
+ASSIGNMENT 02: Build Java Console based Banking App which below functionalities using Collection (HashMap) with Exception Handling (bankingapp-with-collection)
+
+				1] Add Account
+				2] Update Account
+				3] Delete Account
+				4] View Account
+				5] View All Accounts				
+				6] Exit
+		
+				
+ASSIGNMENT 03: Enhance Banking App to print below statistics (bankingapp-with-collection-stats)
+
+				1] Add Account
+				2] Update Account
+				3] Delete Account
+				4] View Account
+				5] View All Accounts
+				6] Print Statistics
+					a] No of accounts which has balance more than 1 lac
+					b] Show no of account by account type
+					c] Show no of accounts by account type with sorting
+					d] Show avg balance by account type			
+					e] List account ids whose account name contains given name
+				7] Exit
+
+
+
+
+

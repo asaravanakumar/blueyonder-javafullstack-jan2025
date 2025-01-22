@@ -1,0 +1,34 @@
+
+Banking App Package
+====================
+
+com
+  |
+  |___blueyonder
+          |
+		  |______ bankingapp
+					|
+					|_____ BankingAppMain
+					
+					|
+					|______ service
+							|
+							|_____ AccountService
+							|
+							|_____ AccountServiceImpl							
+					|
+					|_______ model
+							   |
+							   |____ Account
+					|
+					|_______ dao
+							  |
+							  |_____ AccountDao
+							  |
+							  |_____ AccountDaoJdbcImpl
+					|
+					|_______ exception
+							  |
+							  |_____ AccountException
+					|
+					|_______ util

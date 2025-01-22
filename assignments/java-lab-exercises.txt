@@ -7,8 +7,6 @@ Expected Output:
 java CelsiusToFahrenheit.java 100
 
 
-
-
 EXERCISE 02: Write a Java program for temperature conversion with below options.
 
 TempConverterApp.java
@@ -59,3 +57,42 @@ EXERCISE 06: Write an Account Manager program with below options with an ability
 5. Withdraw Amount
 6. Close Account
 7. Exit
+
+
+EXERCISE 07: Write a program to perform CRUD operations with Order using ArrayList
+
+Order:
+	int id
+	String description
+	String category
+	int quantity
+	double price
+
+
+EXERCISE 08: Write a program to perform CRUD operations with Order using HashSet
+
+
+EXERCISE 09: Write a program to perform CRUD operations with Order using HashMap and also show below details
+
+a. Show Order Category wise Count
+
+b. Show Order Category wise Total Amount
+
+
+EXERCISE 10: Write a generic program to sort given set of data [numbers or strings or objects] using Java Generics
+
+
+EXERCISE 11: Write a program to read/write Order details from file system using Java File IO
+
+
+EXERCISE 12: Write a multi-threading program to read/write Order details from using Java File IO asynchronously
+
+EXERCISE 13: Write a program to perform CRUD operations with Order using JDBC
+
+EXERCISE 14: Write a program to perform validations on Order using Lambda Expressions and also show below details using Stream API
+
+a. Show Order Category wise Count
+b. Show list of Order IDs belongs to particular Category
+b. Show Order Category wise Total Amount
+
+EXERCISE 15: Write a Junit program to test the OrderService performing CRUD operations

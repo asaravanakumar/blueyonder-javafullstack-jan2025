@@ -9,6 +9,10 @@ blueyonder-javabootcamp-jan2025
 					|
 					|___ adv-java-labs
 			|
+			|__spring
+					|
+					|___ spring-core-labs
+			|
 			|__sboot
 					|
 					|___ sboot-core-labs

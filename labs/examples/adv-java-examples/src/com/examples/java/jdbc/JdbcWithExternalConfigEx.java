@@ -1,6 +1,6 @@
 package com.examples.java.jdbc;
 
-import com.mysql.cj.jdbc.MysqlDataSource;
+//import com.mysql.cj.jdbc.MysqlDataSource;
 import org.postgresql.ds.PGSimpleDataSource;
 
 import java.io.FileInputStream;

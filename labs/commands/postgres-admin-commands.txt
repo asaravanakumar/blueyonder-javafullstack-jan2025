@@ -1,0 +1,11 @@
+#Connect via client
+%POSTGRESQL_HOME%\bin\psql 				(enter connection/login details to connect)
+
+#Connect to database
+psql -h localhost -p 5432 -U postgres <dbname>
+
+--Admin commands
+postgres-# \l				(List databases)
+postgres-# \c <dbname>		(Connect to database)
+postgres-# \d 				(List tables)
+postgres-# \d <tablename>	(Describe the table)

@@ -2,7 +2,7 @@ package com.examples.java.jdbc;
 
 //STEP 1. Import required packages
 
-import com.mysql.cj.jdbc.MysqlDataSource;
+//import com.mysql.cj.jdbc.MysqlDataSource;
 import org.postgresql.ds.PGSimpleDataSource;
 
 import java.sql.*;
@@ -27,15 +27,15 @@ public class JdbcWithDataSourceEx {
 		ResultSet rs = null;
 		try {
 			// STEP 2: Create Datasource instance
-			MysqlDataSource dataSource = new MysqlDataSource();
-			dataSource.setUrl(DB_URL);
-			dataSource.setUser(USER);
-			dataSource.setPassword(PASS);
-
-//			PGSimpleDataSource dataSource = new PGSimpleDataSource();
+//			MysqlDataSource dataSource = new MysqlDataSource();
 //			dataSource.setUrl(DB_URL);
 //			dataSource.setUser(USER);
 //			dataSource.setPassword(PASS);
+
+			PGSimpleDataSource dataSource = new PGSimpleDataSource();
+			dataSource.setUrl(DB_URL);
+			dataSource.setUser(USER);
+			dataSource.setPassword(PASS);
 
 			// STEP 3: Open a connection
 			System.out.println("Connecting to database...");

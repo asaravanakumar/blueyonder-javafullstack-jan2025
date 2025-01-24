@@ -8,8 +8,11 @@ public class VirtualThreadExecutor {
         try (ExecutorService executor = Executors.newVirtualThreadPerTaskExecutor()) {
             for (int i = 0; i < 10; i++) {
                 int taskId = i;
-                executor.submit(() -> {
-                    System.out.println("Task " + taskId + " running on thread: " + Thread.currentThread());
+                executor.submit(new Runnable() {
+                    @Override
+                    public void run() {
+                        System.out.println("Task " + taskId + " running on thread: " + Thread.currentThread());
+                    }
                 });
             }
         } // Automatically closes the executor

@@ -15,7 +15,7 @@ public class FluxErrorEx {
 		// publisher
 		Flux.just("India","UK","Australia","Japan")
 		//.map(String::toUpperCase)
-		.map(country -> {if(country.equals("India")) throw new RuntimeException("Invalid Country Name"); return country.toUpperCase();})
+		.map(country -> {if(country.equals("Japan")) throw new RuntimeException("Invalid Country Name"); return country.toUpperCase();})
 		.log()
 		// subscriber
 		.subscribe(countries::add, error -> System.out.println("Error Occured: " + error.getMessage()));  // item -> countries.add(item)

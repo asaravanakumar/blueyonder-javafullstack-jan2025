@@ -1,0 +1,14 @@
+<!-- <?xml version = "1.0" encoding = "UTF-8"?> -->
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- Bean instantiation with default constructor -->
+	<bean id="greetings5" class="com.examples.spring.core.Greetings" scope="singleton" lazy-init="true" init-method="init" destroy-method="cleanup"> 
+		<property name="message"
+			value="Welcome to Spring Framework Training :) FROM CONTEXT #2" />
+	</bean>
+
+</beans>

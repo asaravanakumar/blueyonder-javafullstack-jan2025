@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans default-init-method="init" default-destroy-method="destroy" xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+            https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- Car bmw = new Car();
+             bmw.setColor("White");
+             ...
+    -->
+	<!-- <import resource="beans-config-car.xml"/> -->
+    <bean id="bmw" class="com.examples.spring.Car" scope="prototype" lazy-init="true" autowire="constructor" init-method="initCar" destroy-method="destroyCar">
+
+        <!-- constructor injection --> <!-- Manual Wiring -->
+<!--    	 <constructor-arg name="engine" ref="petrol" />-->
+        <property name="color" value="White" />
+        <property name="manufacturer" value="BMW" />
+        <property name="model" value="XA" />
+        <!-- setter injection -->
+<!--        <property name="engine" ref="petrol"/>-->
+<!--        <property name="engine">-->
+<!--            <ref bean="petrol" />-->
+<!--        </property>-->
+
+        <!-- inner bean -->
+<!--        <property name="engine">-->
+<!--            <bean class="com.examples.spring.Engine" lazy-init="true" scope="singleton" autowire-candidate="true" >-->
+<!--                <property name="capacity" value="2000" />-->
+<!--                <property name="noOfCynclinders" value="4" />-->
+<!--                <property name="torque" value="10" />-->
+<!--            </bean>-->
+<!--        </property>-->
+        
+    </bean>
+
+    <bean id="fortuner" class="com.examples.spring.Car" init-method="initCar" destroy-method="destroyCar"> <!-- lazy-init="true" scope="singleton" autowire="byType">   -->
+
+        <!-- <constructor-arg name="engine" ref="vtix" /> -->
+        <property name="color" value="White" />
+        <property name="manufacturer" value="Toyota" />
+        <property name="model" value="XA" />
+        <property name="engine" ref="petrol"/>
+
+    </bean>
+
+    <!--
+        Engine petrol = new Engine();
+        petrol.setCapacity(2000);
+        ...
+    -->
+    <bean id="petrol" class="com.examples.spring.Engine" lazy-init="true" scope="singleton" primary="true" >
+		<property name="capacity" value="2000" />
+        <property name="noOfCynclinders" value="4" />
+        <property name="torque" value="10" />
+    </bean>
+
+    <!--
+    Engine diesel = new Engine();
+    petrol.setCapacity(4000);
+    ...
+-->
+    <bean id="diesel" class="com.examples.spring.Engine" lazy-init="true" primary="true" autowire-candidate="false" >
+		<property name="capacity" value="4000" />
+        <property name="noOfCynclinders" value="4" />
+        <property name="torque" value="20" />
+    </bean>
+
+    <!--
+    Engine electric = new Engine();
+    petrol.setCapacity(6000);
+    ...
+-->
+    <bean id="electric" class="com.examples.spring.Engine" lazy-init="true" >
+		<property name="capacity" value="6000" />
+        <property name="noOfCynclinders" value="4" />
+        <property name="torque" value="20" />
+    </bean>
+    
+<!--     <bean id="genericBeanPostProcessor" class="com.examples.spring.GenericBeanPostProcessor" /> -->
+
+    <!-- more bean definitions go here -->
+
+</beans>

@@ -1,0 +1,148 @@
+<!-- <?xml version = "1.0" encoding = "UTF-8"?> -->
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- Bean instantiation with default constructor -->
+	<bean id="greetings" class="com.examples.spring.core.Greetings" lazy-init="default"> <!-- init-method="init" destroy-method="cleanup"> -->
+		<property name="message"
+			value="Welcome to Spring Framework Training :)" />
+	</bean>
+
+	<!-- Bean instantiation with constructor arguments -->
+	<bean id="greetings1" class="com.examples.spring.core.Greetings">
+		<constructor-arg name="message"
+			value="Welcome to Spring Framework Training :) Constructor argumnet">
+		</constructor-arg>
+	</bean>
+
+	<!-- Bean instantiation with multiple constructor arguments to demonstrate 
+		constructor argument resolution -->
+	<bean id="greetings2" class="com.examples.spring.core.Greetings">
+		<!-- Constructor resolution based on name -->
+		<constructor-arg name="message1"
+			value="Welcome to Spring Framework Training :)" />
+		<constructor-arg name="message2"
+			value="Constructor arguments resolution example" />
+
+		<!-- Constructor resolution based on type -->
+		<!-- <constructor-arg type="String" value="Welcome to Spring Framework 
+			Training :)" /> <constructor-arg type="String" value="Constructor arguments 
+			resolution example" /> -->
+
+		<!-- Constructor resolution based on index -->
+		<!-- <constructor-arg index="0" value="Welcome to Spring Framework Training 
+			:)" /> <constructor-arg index="1" value="Constructor arguments resolution 
+			example" /> -->
+	</bean>
+
+	<!-- Bean instantiation with static factory method -->
+	<bean id="greetingServiceFactory"
+		class="com.examples.spring.core.bean.GreetingService"
+		factory-method="getInstance">
+		<!-- <constructor-arg name="message" value="Welcome to Spring Framework 
+			Training :) - Factory method" /> -->
+		<!-- <property name="message" value="Welcome to Spring Framework Training :)" /> -->
+	</bean>
+
+	<!-- Bean instantiation with instance factory method - START -->
+	<bean id="serviceLocator"
+		class="com.examples.spring.core.bean.DefaultServiceLocator" />
+
+	<bean id="greetingService"
+		class="com.examples.spring.core.bean.GreetingService"
+		factory-bean="serviceLocator" factory-method="createGreetingService" />
+
+	<bean id="accountService"
+		class="com.examples.spring.core.bean.AccountService"
+		factory-bean="serviceLocator" factory-method="createAccountService" />
+	<!-- Bean instantiation with instance factory method - END -->
+
+	<!-- Injecting collection - START -->
+	<bean id="collectionInjectionEx"
+		class="com.examples.spring.core.injection.CollectionInjectionEx">
+
+		<!-- results in a setAddressList(java.util.List) call -->
+		<property name="addressList">
+			<list>
+				<value>INDIA</value>
+				<value>Pakistan</value>
+				<value>USA</value>
+				<value>USA</value>
+			</list>
+		</property>
+
+		<!-- results in a setAddressSet(java.util.Set) call -->
+		<property name="addressSet">
+			<set>
+				<value>INDIA</value>
+				<value>Pakistan</value>
+				<value>USA</value>
+				<value>USA</value>
+			</set>
+		</property>
+
+		<!-- results in a setAddressMap(java.util.Map) call -->
+		<property name="addressMap">
+			<map>
+				<entry key="1" value="INDIA" />
+				<entry key="2" value="Pakistan" />
+				<entry key="3" value="USA" />
+				<entry key="4" value="USA" />
+			</map>
+		</property>
+
+		<!-- results in a setAddressProp(java.util.Properties) call -->
+		<property name="addressProp">
+			<props>
+				<prop key="one">INDIA</prop>
+				<prop key="two">Pakistan</prop>
+				<prop key="three">USA</prop>
+				<prop key="four">USA</prop>
+			</props>
+		</property>
+	</bean>
+	<!-- Injecting collection - END -->
+	
+	<!-- Bean Post Processor - START -->
+<!-- 	<bean id="greetingsBeanPostProcessor" class="com.examples.spring.core.bean.GreetingsBeanPostProcessor" /> -->
+	<!-- Bean Post Processor - END -->
+
+	<!-- Bean Definition inheritance example - START -->
+	<bean id="personTemplate"
+		class="com.examples.spring.core.autowire.Person" abstract="true">
+		<property name="name" value="Kumar" />
+		<property name="age" value="25" />
+	</bean>
+
+	<bean id="person1"
+		class="com.examples.spring.core.autowire.Person"
+		parent="personTemplate">
+		<property name="name" value="Anand" />
+		<property name="location" value="Bengaluru" />
+	</bean>
+	<!-- Bean Definition inheritance example - END -->
+
+	<!-- Autowiring Example - START -->
+	<bean id="person" class="com.examples.spring.core.autowire.Person">
+		<property name="name" value="Kumar" />
+		<property name="age" value="25" />
+		<property name="location" value="Bengaluru" />
+	</bean>
+
+	<!-- Auto-wiring by name -->
+	<!--<bean id="customer"-->
+		<!--class="com.examples.spring.core.autowire.Customer" autowire="byName">-->
+	<!--</bean>  -->
+
+	<!-- Auto-wiring by type -->
+	<!-- <bean id="customer" class="com.examples.spring.core.autowire.Customer" 
+		autowire="byType"> </bean> -->
+
+	<!-- Auto-wiring by constructor -->
+	 <bean id="customer" class="com.examples.spring.core.autowire.Customer"
+		autowire="constructor"> </bean>
+	<!-- Autowiring Example - END -->
+</beans>

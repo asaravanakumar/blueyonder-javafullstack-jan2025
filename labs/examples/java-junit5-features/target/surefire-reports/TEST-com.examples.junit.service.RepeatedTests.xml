@@ -1,0 +1,414 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="com.examples.junit.service.RepeatedTests" time="0.018" tests="30" errors="0" skipped="4" failures="2">
+  <properties>
+    <property name="java.specification.version" value="17"/>
+    <property name="sun.jnu.encoding" value="UTF-8"/>
+    <property name="java.class.path" value="/Users/saravana/Desktop/Training/bosch_junit/labs/examples/java-junit5-features/target/test-classes:/Users/saravana/Desktop/Training/bosch_junit/labs/examples/java-junit5-features/target/classes:/Users/saravana/.m2/repository/org/junit/jupiter/junit-jupiter/5.10.0/junit-jupiter-5.10.0.jar:/Users/saravana/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.10.0/junit-jupiter-api-5.10.0.jar:/Users/saravana/.m2/repository/org/opentest4j/opentest4j/1.3.0/opentest4j-1.3.0.jar:/Users/saravana/.m2/repository/org/junit/platform/junit-platform-commons/1.10.0/junit-platform-commons-1.10.0.jar:/Users/saravana/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.10.0/junit-jupiter-engine-5.10.0.jar:/Users/saravana/.m2/repository/org/junit/platform/junit-platform-suite-engine/1.10.0/junit-platform-suite-engine-1.10.0.jar:/Users/saravana/.m2/repository/org/junit/platform/junit-platform-engine/1.10.0/junit-platform-engine-1.10.0.jar:/Users/saravana/.m2/repository/org/junit/platform/junit-platform-suite-api/1.10.0/junit-platform-suite-api-1.10.0.jar:/Users/saravana/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar:/Users/saravana/.m2/repository/org/junit/platform/junit-platform-suite-commons/1.10.0/junit-platform-suite-commons-1.10.0.jar:/Users/saravana/.m2/repository/org/junit/platform/junit-platform-launcher/1.10.0/junit-platform-launcher-1.10.0.jar:/Users/saravana/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.10.0/junit-jupiter-params-5.10.0.jar:"/>
+    <property name="java.vm.vendor" value="Oracle Corporation"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="java.vendor.url" value="https://java.oracle.com/"/>
+    <property name="os.name" value="Mac OS X"/>
+    <property name="java.vm.specification.version" value="17"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="user.country" value="IN"/>
+    <property name="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/jdk-17.jdk/Contents/Home/lib"/>
+    <property name="sun.java.command" value="/Users/saravana/Desktop/Training/bosch_junit/labs/examples/java-junit5-features/target/surefire/surefirebooter-20231014115312120_3.jar /Users/saravana/Desktop/Training/bosch_junit/labs/examples/java-junit5-features/target/surefire 2023-10-14T11-53-12_068-jvmRun1 surefire-20231014115312120_1tmp surefire_0-20231014115312120_2tmp"/>
+    <property name="http.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+    <property name="jdk.debug" value="release"/>
+    <property name="surefire.test.class.path" value="/Users/saravana/Desktop/Training/bosch_junit/labs/examples/java-junit5-features/target/test-classes:/Users/saravana/Desktop/Training/bosch_junit/labs/examples/java-junit5-features/target/classes:/Users/saravana/.m2/repository/org/junit/jupiter/junit-jupiter/5.10.0/junit-jupiter-5.10.0.jar:/Users/saravana/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.10.0/junit-jupiter-api-5.10.0.jar:/Users/saravana/.m2/repository/org/opentest4j/opentest4j/1.3.0/opentest4j-1.3.0.jar:/Users/saravana/.m2/repository/org/junit/platform/junit-platform-commons/1.10.0/junit-platform-commons-1.10.0.jar:/Users/saravana/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.10.0/junit-jupiter-engine-5.10.0.jar:/Users/saravana/.m2/repository/org/junit/platform/junit-platform-suite-engine/1.10.0/junit-platform-suite-engine-1.10.0.jar:/Users/saravana/.m2/repository/org/junit/platform/junit-platform-engine/1.10.0/junit-platform-engine-1.10.0.jar:/Users/saravana/.m2/repository/org/junit/platform/junit-platform-suite-api/1.10.0/junit-platform-suite-api-1.10.0.jar:/Users/saravana/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar:/Users/saravana/.m2/repository/org/junit/platform/junit-platform-suite-commons/1.10.0/junit-platform-suite-commons-1.10.0.jar:/Users/saravana/.m2/repository/org/junit/platform/junit-platform-launcher/1.10.0/junit-platform-launcher-1.10.0.jar:/Users/saravana/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.10.0/junit-jupiter-params-5.10.0.jar:"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="user.home" value="/Users/saravana"/>
+    <property name="user.language" value="en"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.version.date" value="2023-04-18"/>
+    <property name="java.home" value="/Library/Java/JavaVirtualMachines/jdk-17.jdk/Contents/Home"/>
+    <property name="file.separator" value="/"/>
+    <property name="basedir" value="/Users/saravana/Desktop/Training/bosch_junit/labs/examples/java-junit5-features"/>
+    <property name="java.vm.compressedOopsMode" value="Zero based"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="surefire.real.class.path" value="/Users/saravana/Desktop/Training/bosch_junit/labs/examples/java-junit5-features/target/surefire/surefirebooter-20231014115312120_3.jar"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+    <property name="java.runtime.version" value="17.0.7+8-LTS-224"/>
+    <property name="user.name" value="saravana"/>
+    <property name="path.separator" value=":"/>
+    <property name="os.version" value="13.3"/>
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+    <property name="file.encoding" value="US-ASCII"/>
+    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
+    <property name="localRepository" value="/Users/saravana/.m2/repository"/>
+    <property name="java.vendor.url.bug" value="https://bugreport.java.com/bugreport/"/>
+    <property name="java.io.tmpdir" value="/var/folders/7z/dbyd2p2x4hbc3qmgcdlk0b780000gp/T/"/>
+    <property name="idea.version" value="2022.2.1"/>
+    <property name="java.version" value="17.0.7"/>
+    <property name="user.dir" value="/Users/saravana/Desktop/Training/bosch_junit/labs/examples/java-junit5-features"/>
+    <property name="os.arch" value="aarch64"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="native.encoding" value="US-ASCII"/>
+    <property name="java.library.path" value="/Users/saravana/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:."/>
+    <property name="java.vm.info" value="mixed mode, sharing"/>
+    <property name="java.vendor" value="Oracle Corporation"/>
+    <property name="java.vm.version" value="17.0.7+8-LTS-224"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeBig"/>
+    <property name="socksNonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+    <property name="java.class.version" value="61.0"/>
+  </properties>
+  <testcase name="repeatedTest" classname="com.examples.junit.service.RepeatedTests" time="0.004">
+    <system-out><![CDATA[About to execute repetition 1 of 10 for repeatedTest
+]]></system-out>
+  </testcase>
+  <testcase name="repeatedTest" classname="com.examples.junit.service.RepeatedTests" time="0.0">
+    <system-out><![CDATA[About to execute repetition 2 of 10 for repeatedTest
+]]></system-out>
+  </testcase>
+  <testcase name="repeatedTest" classname="com.examples.junit.service.RepeatedTests" time="0.0">
+    <system-out><![CDATA[About to execute repetition 3 of 10 for repeatedTest
+]]></system-out>
+  </testcase>
+  <testcase name="repeatedTest" classname="com.examples.junit.service.RepeatedTests" time="0.001">
+    <system-out><![CDATA[About to execute repetition 4 of 10 for repeatedTest
+]]></system-out>
+  </testcase>
+  <testcase name="repeatedTest" classname="com.examples.junit.service.RepeatedTests" time="0.0">
+    <system-out><![CDATA[About to execute repetition 5 of 10 for repeatedTest
+]]></system-out>
+  </testcase>
+  <testcase name="repeatedTest" classname="com.examples.junit.service.RepeatedTests" time="0.001">
+    <system-out><![CDATA[About to execute repetition 6 of 10 for repeatedTest
+]]></system-out>
+  </testcase>
+  <testcase name="repeatedTest" classname="com.examples.junit.service.RepeatedTests" time="0.0">
+    <system-out><![CDATA[About to execute repetition 7 of 10 for repeatedTest
+]]></system-out>
+  </testcase>
+  <testcase name="repeatedTest" classname="com.examples.junit.service.RepeatedTests" time="0.001">
+    <system-out><![CDATA[About to execute repetition 8 of 10 for repeatedTest
+]]></system-out>
+  </testcase>
+  <testcase name="repeatedTest" classname="com.examples.junit.service.RepeatedTests" time="0.0">
+    <system-out><![CDATA[About to execute repetition 9 of 10 for repeatedTest
+]]></system-out>
+  </testcase>
+  <testcase name="repeatedTest" classname="com.examples.junit.service.RepeatedTests" time="0.001">
+    <system-out><![CDATA[About to execute repetition 10 of 10 for repeatedTest
+]]></system-out>
+  </testcase>
+  <testcase name="repeatedTest" classname="com.examples.junit.service.RepeatedTests" time="0.001">
+    <system-out><![CDATA[About to execute repetition 1 of 10 for repeatedTest
+]]></system-out>
+  </testcase>
+  <testcase name="repeatedTest" classname="com.examples.junit.service.RepeatedTests" time="0.0">
+    <system-out><![CDATA[About to execute repetition 2 of 10 for repeatedTest
+]]></system-out>
+  </testcase>
+  <testcase name="repeatedTest" classname="com.examples.junit.service.RepeatedTests" time="0.0">
+    <system-out><![CDATA[About to execute repetition 3 of 10 for repeatedTest
+]]></system-out>
+  </testcase>
+  <testcase name="repeatedTest" classname="com.examples.junit.service.RepeatedTests" time="0.0">
+    <system-out><![CDATA[About to execute repetition 4 of 10 for repeatedTest
+]]></system-out>
+  </testcase>
+  <testcase name="repeatedTest" classname="com.examples.junit.service.RepeatedTests" time="0.001">
+    <system-out><![CDATA[About to execute repetition 5 of 10 for repeatedTest
+]]></system-out>
+  </testcase>
+  <testcase name="repeatedTest" classname="com.examples.junit.service.RepeatedTests" time="0.0">
+    <system-out><![CDATA[About to execute repetition 6 of 10 for repeatedTest
+]]></system-out>
+  </testcase>
+  <testcase name="repeatedTest" classname="com.examples.junit.service.RepeatedTests" time="0.0">
+    <system-out><![CDATA[About to execute repetition 7 of 10 for repeatedTest
+]]></system-out>
+  </testcase>
+  <testcase name="repeatedTest" classname="com.examples.junit.service.RepeatedTests" time="0.0">
+    <system-out><![CDATA[About to execute repetition 8 of 10 for repeatedTest
+]]></system-out>
+  </testcase>
+  <testcase name="repeatedTest" classname="com.examples.junit.service.RepeatedTests" time="0.001">
+    <system-out><![CDATA[About to execute repetition 9 of 10 for repeatedTest
+]]></system-out>
+  </testcase>
+  <testcase name="repeatedTest" classname="com.examples.junit.service.RepeatedTests" time="0.0">
+    <system-out><![CDATA[About to execute repetition 10 of 10 for repeatedTest
+]]></system-out>
+  </testcase>
+  <testcase name="repeatedTestInGerman" classname="com.examples.junit.service.RepeatedTests" time="0.0">
+    <system-out><![CDATA[About to execute repetition 1 of 5 for repeatedTestInGerman
+]]></system-out>
+  </testcase>
+  <testcase name="repeatedTestInGerman" classname="com.examples.junit.service.RepeatedTests" time="0.0">
+    <system-out><![CDATA[About to execute repetition 2 of 5 for repeatedTestInGerman
+]]></system-out>
+  </testcase>
+  <testcase name="repeatedTestInGerman" classname="com.examples.junit.service.RepeatedTests" time="0.0">
+    <system-out><![CDATA[About to execute repetition 3 of 5 for repeatedTestInGerman
+]]></system-out>
+  </testcase>
+  <testcase name="repeatedTestInGerman" classname="com.examples.junit.service.RepeatedTests" time="0.0">
+    <system-out><![CDATA[About to execute repetition 4 of 5 for repeatedTestInGerman
+]]></system-out>
+  </testcase>
+  <testcase name="repeatedTestInGerman" classname="com.examples.junit.service.RepeatedTests" time="0.0">
+    <system-out><![CDATA[About to execute repetition 5 of 5 for repeatedTestInGerman
+]]></system-out>
+  </testcase>
+  <testcase name="repeatedTestInGerman" classname="com.examples.junit.service.RepeatedTests" time="0.0">
+    <system-out><![CDATA[About to execute repetition 1 of 5 for repeatedTestInGerman
+]]></system-out>
+  </testcase>
+  <testcase name="repeatedTestInGerman" classname="com.examples.junit.service.RepeatedTests" time="0.0">
+    <system-out><![CDATA[About to execute repetition 2 of 5 for repeatedTestInGerman
+]]></system-out>
+  </testcase>
+  <testcase name="repeatedTestInGerman" classname="com.examples.junit.service.RepeatedTests" time="0.0">
+    <system-out><![CDATA[About to execute repetition 3 of 5 for repeatedTestInGerman
+]]></system-out>
+  </testcase>
+  <testcase name="repeatedTestInGerman" classname="com.examples.junit.service.RepeatedTests" time="0.0">
+    <system-out><![CDATA[About to execute repetition 4 of 5 for repeatedTestInGerman
+]]></system-out>
+  </testcase>
+  <testcase name="repeatedTestInGerman" classname="com.examples.junit.service.RepeatedTests" time="0.0">
+    <system-out><![CDATA[About to execute repetition 5 of 5 for repeatedTestInGerman
+]]></system-out>
+  </testcase>
+  <testcase name="repeatedTestWithRepetitionInfo(RepetitionInfo)[1]" classname="com.examples.junit.service.RepeatedTests" time="0.0">
+    <system-out><![CDATA[About to execute repetition 1 of 5 for repeatedTestWithRepetitionInfo
+]]></system-out>
+  </testcase>
+  <testcase name="repeatedTestWithRepetitionInfo(RepetitionInfo)[1]" classname="com.examples.junit.service.RepeatedTests" time="0.001">
+    <system-out><![CDATA[About to execute repetition 1 of 5 for repeatedTestWithRepetitionInfo
+]]></system-out>
+  </testcase>
+  <testcase name="repeatedTestWithRepetitionInfo(RepetitionInfo)[2]" classname="com.examples.junit.service.RepeatedTests" time="0.001">
+    <system-out><![CDATA[About to execute repetition 2 of 5 for repeatedTestWithRepetitionInfo
+]]></system-out>
+  </testcase>
+  <testcase name="repeatedTestWithRepetitionInfo(RepetitionInfo)[2]" classname="com.examples.junit.service.RepeatedTests" time="0.001">
+    <system-out><![CDATA[About to execute repetition 2 of 5 for repeatedTestWithRepetitionInfo
+]]></system-out>
+  </testcase>
+  <testcase name="repeatedTestWithRepetitionInfo(RepetitionInfo)[3]" classname="com.examples.junit.service.RepeatedTests" time="0.0">
+    <system-out><![CDATA[About to execute repetition 3 of 5 for repeatedTestWithRepetitionInfo
+]]></system-out>
+  </testcase>
+  <testcase name="repeatedTestWithRepetitionInfo(RepetitionInfo)[3]" classname="com.examples.junit.service.RepeatedTests" time="0.0">
+    <system-out><![CDATA[About to execute repetition 3 of 5 for repeatedTestWithRepetitionInfo
+]]></system-out>
+  </testcase>
+  <testcase name="repeatedTestWithRepetitionInfo(RepetitionInfo)[4]" classname="com.examples.junit.service.RepeatedTests" time="0.0">
+    <system-out><![CDATA[About to execute repetition 4 of 5 for repeatedTestWithRepetitionInfo
+]]></system-out>
+  </testcase>
+  <testcase name="repeatedTestWithRepetitionInfo(RepetitionInfo)[4]" classname="com.examples.junit.service.RepeatedTests" time="0.001">
+    <system-out><![CDATA[About to execute repetition 4 of 5 for repeatedTestWithRepetitionInfo
+]]></system-out>
+  </testcase>
+  <testcase name="repeatedTestWithRepetitionInfo(RepetitionInfo)[5]" classname="com.examples.junit.service.RepeatedTests" time="0.001">
+    <system-out><![CDATA[About to execute repetition 5 of 5 for repeatedTestWithRepetitionInfo
+]]></system-out>
+  </testcase>
+  <testcase name="repeatedTestWithRepetitionInfo(RepetitionInfo)[5]" classname="com.examples.junit.service.RepeatedTests" time="0.0">
+    <system-out><![CDATA[About to execute repetition 5 of 5 for repeatedTestWithRepetitionInfo
+]]></system-out>
+  </testcase>
+  <testcase name="customDisplayNameWithLongPattern(TestInfo)[1]" classname="com.examples.junit.service.RepeatedTests" time="0.0">
+    <system-out><![CDATA[About to execute repetition 1 of 1 for customDisplayNameWithLongPattern
+]]></system-out>
+  </testcase>
+  <testcase name="customDisplayNameWithLongPattern(TestInfo)[1]" classname="com.examples.junit.service.RepeatedTests" time="0.001">
+    <system-out><![CDATA[About to execute repetition 1 of 1 for customDisplayNameWithLongPattern
+]]></system-out>
+  </testcase>
+  <testcase name="repeatedTestWithFailureThreshold(RepetitionInfo)[1]" classname="com.examples.junit.service.RepeatedTests" time="0.001">
+    <system-out><![CDATA[About to execute repetition 1 of 8 for repeatedTestWithFailureThreshold
+]]></system-out>
+  </testcase>
+  <testcase name="repeatedTestWithFailureThreshold(RepetitionInfo)[1]" classname="com.examples.junit.service.RepeatedTests" time="0.0">
+    <system-out><![CDATA[About to execute repetition 1 of 8 for repeatedTestWithFailureThreshold
+]]></system-out>
+  </testcase>
+  <testcase name="repeatedTestWithFailureThreshold(RepetitionInfo)[2]" classname="com.examples.junit.service.RepeatedTests" time="0.002">
+    <failure message="Boom!" type="org.opentest4j.AssertionFailedError"><![CDATA[org.opentest4j.AssertionFailedError: Boom!
+	at org.junit.jupiter.api.AssertionUtils.fail(AssertionUtils.java:38)
+	at org.junit.jupiter.api.Assertions.fail(Assertions.java:134)
+	at com.examples.junit.service.RepeatedTests.repeatedTestWithFailureThreshold(RepeatedTests.java:42)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:183)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:179)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:183)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.stream.IntPipeline$1$1.accept(IntPipeline.java:180)
+	at java.base/java.util.stream.Streams$RangeIntSpliterator.forEachRemaining(Streams.java:104)
+	at java.base/java.util.Spliterator$OfInt.forEachRemaining(Spliterator.java:711)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:150)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:173)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:596)
+	at java.base/java.util.stream.ReferencePipeline$7$1.accept(ReferencePipeline.java:276)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1625)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:150)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:173)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+]]></failure>
+    <system-out><![CDATA[About to execute repetition 2 of 8 for repeatedTestWithFailureThreshold
+]]></system-out>
+  </testcase>
+  <testcase name="repeatedTestWithFailureThreshold(RepetitionInfo)[2]" classname="com.examples.junit.service.RepeatedTests" time="0.001">
+    <failure message="Boom!" type="org.opentest4j.AssertionFailedError"><![CDATA[org.opentest4j.AssertionFailedError: Boom!
+	at org.junit.jupiter.api.AssertionUtils.fail(AssertionUtils.java:38)
+	at org.junit.jupiter.api.Assertions.fail(Assertions.java:134)
+	at com.examples.junit.service.RepeatedTests.repeatedTestWithFailureThreshold(RepeatedTests.java:42)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:183)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:179)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:183)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.stream.IntPipeline$1$1.accept(IntPipeline.java:180)
+	at java.base/java.util.stream.Streams$RangeIntSpliterator.forEachRemaining(Streams.java:104)
+	at java.base/java.util.Spliterator$OfInt.forEachRemaining(Spliterator.java:711)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:150)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:173)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:596)
+	at java.base/java.util.stream.ReferencePipeline$7$1.accept(ReferencePipeline.java:276)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1625)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:150)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:173)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+]]></failure>
+    <system-out><![CDATA[About to execute repetition 2 of 8 for repeatedTestWithFailureThreshold
+]]></system-out>
+  </testcase>
+  <testcase name="repeatedTestWithFailureThreshold(RepetitionInfo)[3]" classname="com.examples.junit.service.RepeatedTests" time="0.001">
+    <system-out><![CDATA[About to execute repetition 3 of 8 for repeatedTestWithFailureThreshold
+]]></system-out>
+  </testcase>
+  <testcase name="repeatedTestWithFailureThreshold(RepetitionInfo)[3]" classname="com.examples.junit.service.RepeatedTests" time="0.0">
+    <system-out><![CDATA[About to execute repetition 3 of 8 for repeatedTestWithFailureThreshold
+]]></system-out>
+  </testcase>
+  <testcase name="repeatedTestWithFailureThreshold(RepetitionInfo)[4]" classname="com.examples.junit.service.RepeatedTests" time="0.0">
+    <failure message="Boom!" type="org.opentest4j.AssertionFailedError"><![CDATA[org.opentest4j.AssertionFailedError: Boom!
+	at org.junit.jupiter.api.AssertionUtils.fail(AssertionUtils.java:38)
+	at org.junit.jupiter.api.Assertions.fail(Assertions.java:134)
+	at com.examples.junit.service.RepeatedTests.repeatedTestWithFailureThreshold(RepeatedTests.java:42)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:183)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:179)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:183)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.stream.IntPipeline$1$1.accept(IntPipeline.java:180)
+	at java.base/java.util.stream.Streams$RangeIntSpliterator.forEachRemaining(Streams.java:104)
+	at java.base/java.util.Spliterator$OfInt.forEachRemaining(Spliterator.java:711)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:150)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:173)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:596)
+	at java.base/java.util.stream.ReferencePipeline$7$1.accept(ReferencePipeline.java:276)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1625)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:150)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:173)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+]]></failure>
+    <system-out><![CDATA[About to execute repetition 4 of 8 for repeatedTestWithFailureThreshold
+]]></system-out>
+  </testcase>
+  <testcase name="repeatedTestWithFailureThreshold(RepetitionInfo)[4]" classname="com.examples.junit.service.RepeatedTests" time="0.001">
+    <failure message="Boom!" type="org.opentest4j.AssertionFailedError"><![CDATA[org.opentest4j.AssertionFailedError: Boom!
+	at org.junit.jupiter.api.AssertionUtils.fail(AssertionUtils.java:38)
+	at org.junit.jupiter.api.Assertions.fail(Assertions.java:134)
+	at com.examples.junit.service.RepeatedTests.repeatedTestWithFailureThreshold(RepeatedTests.java:42)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:183)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:179)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:183)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.stream.IntPipeline$1$1.accept(IntPipeline.java:180)
+	at java.base/java.util.stream.Streams$RangeIntSpliterator.forEachRemaining(Streams.java:104)
+	at java.base/java.util.Spliterator$OfInt.forEachRemaining(Spliterator.java:711)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:150)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:173)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:596)
+	at java.base/java.util.stream.ReferencePipeline$7$1.accept(ReferencePipeline.java:276)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1625)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:150)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:173)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+]]></failure>
+    <system-out><![CDATA[About to execute repetition 4 of 8 for repeatedTestWithFailureThreshold
+]]></system-out>
+  </testcase>
+  <testcase name="repeatedTestWithFailureThreshold(RepetitionInfo)[5]" classname="com.examples.junit.service.RepeatedTests" time="0.0">
+    <skipped message="Failure threshold [2] exceeded"/>
+  </testcase>
+  <testcase name="repeatedTestWithFailureThreshold(RepetitionInfo)[5]" classname="com.examples.junit.service.RepeatedTests" time="0.0">
+    <skipped message="Failure threshold [2] exceeded"/>
+  </testcase>
+  <testcase name="repeatedTestWithFailureThreshold(RepetitionInfo)[6]" classname="com.examples.junit.service.RepeatedTests" time="0.0">
+    <skipped message="Failure threshold [2] exceeded"/>
+  </testcase>
+  <testcase name="repeatedTestWithFailureThreshold(RepetitionInfo)[6]" classname="com.examples.junit.service.RepeatedTests" time="0.0">
+    <skipped message="Failure threshold [2] exceeded"/>
+  </testcase>
+  <testcase name="repeatedTestWithFailureThreshold(RepetitionInfo)[7]" classname="com.examples.junit.service.RepeatedTests" time="0.0">
+    <skipped message="Failure threshold [2] exceeded"/>
+  </testcase>
+  <testcase name="repeatedTestWithFailureThreshold(RepetitionInfo)[7]" classname="com.examples.junit.service.RepeatedTests" time="0.0">
+    <skipped message="Failure threshold [2] exceeded"/>
+  </testcase>
+  <testcase name="repeatedTestWithFailureThreshold(RepetitionInfo)[8]" classname="com.examples.junit.service.RepeatedTests" time="0.0">
+    <skipped message="Failure threshold [2] exceeded"/>
+  </testcase>
+  <testcase name="repeatedTestWithFailureThreshold(RepetitionInfo)[8]" classname="com.examples.junit.service.RepeatedTests" time="0.0">
+    <skipped message="Failure threshold [2] exceeded"/>
+  </testcase>
+  <testcase name="customDisplayName(TestInfo)[1]" classname="com.examples.junit.service.RepeatedTests" time="0.0">
+    <system-out><![CDATA[About to execute repetition 1 of 1 for customDisplayName
+]]></system-out>
+  </testcase>
+  <testcase name="customDisplayName(TestInfo)[1]" classname="com.examples.junit.service.RepeatedTests" time="0.001">
+    <system-out><![CDATA[About to execute repetition 1 of 1 for customDisplayName
+]]></system-out>
+  </testcase>
+</testsuite>

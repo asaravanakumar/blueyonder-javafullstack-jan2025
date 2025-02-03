@@ -1,0 +1,75 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.examples.empapp</groupId>
+	<artifactId>employee-mgmt-app03</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>war</packaging>
+	<name>employee-mgmt-app03</name>
+	<description>Employgee Management App with Servlets / JSP</description>
+
+	<properties>
+		<java-version>21</java-version>
+<!--		<org.springframework-version>5.3.28</org.springframework-version>-->
+<!--		<javax.servlet-api-version>4.0.1</javax.servlet-api-version>-->
+		 <servlet-api-version>6.0.0</servlet-api-version>
+		<org.postgres-version>42.7.0</org.postgres-version>
+		<slf4j-version>1.7.36</slf4j-version>
+		<slf4j-log4j-version>1.7.36</slf4j-log4j-version>
+		<maven-compiler-plugin-version>3.11.0</maven-compiler-plugin-version>
+		<maven-war-plugin-version>3.4.0</maven-war-plugin-version>
+	</properties>
+
+	<dependencies>
+
+		<!-- Servlet API dependency -->
+		<dependency>
+			<groupId>jakarta.servlet</groupId>
+			<artifactId>jakarta.servlet-api</artifactId>
+			<version>${servlet-api-version}</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<!-- Servlet API dependency -->
+<!--		<dependency>-->
+<!--			<groupId>javax.servlet</groupId>-->
+<!--			<artifactId>javax.servlet-api</artifactId>-->
+<!--			<version>4.0.1</version>-->
+<!--			<scope>provided</scope>-->
+<!--		</dependency>-->
+
+		<!-- MySQL database connector -->
+<!--		<dependency>-->
+<!--			<groupId>mysql</groupId>-->
+<!--			<artifactId>mysql-connector-java</artifactId>-->
+<!--			<version>8.0.29</version>-->
+<!--		</dependency>-->
+
+		<!-- Postgres Driver -->
+		<dependency>
+			<groupId>org.postgresql</groupId>
+			<artifactId>postgresql</artifactId>
+			<version>${org.postgres-version}</version>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<finalName>employee-mgmt-app03</finalName>
+
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>${maven-compiler-plugin-version}</version>
+				<configuration>
+					<source>${java-version}</source>
+					<target>${java-version}</target>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-war-plugin</artifactId>
+				<version>${maven-war-plugin-version}</version>
+			</plugin>
+		</plugins>
+	</build>
+</project>

@@ -1,0 +1,96 @@
+JUnit
+=====
+
+Java Unit Test Framework
+Latest version 5.11.x
+
+Junit 4 	vs 	Junit 5
+=======			=====
+Monolith		Modular
+				Separated Test Case Library and Test Runtime
+				Re-organised
+				Changes in Annotations
+
+				JUnit Platform
+				Jupitor Runtime	=> Junit 5
+				Vintage Runtime	=> Junit 4
+
+JUnit Concepts
+==============
+
+Fixtures -> Test data specific to each test cases which helps to re-run test cases multiple times
+Test Case -> Validates piece of code against set of conditions
+Test Result -> Output of Test Case (Failed/Success)
+
+Test Suite	-> Set of Test Cases
+Test Runner -> Component executes the Test Cases (Suites)
+
+Assertions => Condition Checks => check whether expected result matching with actual result
+
+Test Cases -> Test Class(es) -> Test Suite
+
+Annotations
+========
+#Test Case
+@Test
+@BeforeAll
+@AfterAll
+@BeforeEach
+@AfterEach
+
+
+Calculator
+===========
+
+add(a,b)
+substract(a,b)
+multiply(a,b)
+divide(a,b)
+
+10,10 => 10 + 10 = 20
+10,-5 => 10 + (-5)	= 5
+-5,-5 => (-5) + (-5) = -10
+0,0   => 0 + 0 = 0
+
+CalculatorTest
+===============
+TDD (Test Driven Development)
+
+Calculator {
+
+	add(a,b,c) 
+	{
+		return a+b;
+	};
+	
+	subtract(a,b) {};
+	divide(a,b){};
+	multiply(a,b){};
+	
+	add(10,20); => 30
+}
+
+CalculatorTest {
+
+	// approach #1
+	testAdd1(10, 20);
+	testAdd2(-10, -20);
+	
+	// approach #2 given...when...then
+	givenTwoArgumentsWhenPositiveThenReturnPositiveValue()
+	{
+		int c = add(10,20);
+		assertEquals(30, c);
+	}
+
+	whenTwoArgumentsAreNegative_thenReturnNegativeValue()
+	whenTwoArgumentsAreZero_thenReturnZeroValue()
+	whenFirstArgumentisPositiveAndSecondIsNegativeWithSmaller_thenReturnPostiveValue()
+	whenFirstArgumentisPositiveAndSecondIsNegativeWithBigger_thenReturnNegativeValue()		
+	
+	// approach #3 should...When
+	shouldReturnPositiveValueWhenTwoArgumentsArePositive() {}
+	shouldShowValidationErrorWhenIncidentDescriptionisMissing() {}
+	
+	....
+}

@@ -1,0 +1,79 @@
+Framework Overview
+Spring History
+	- Rod Johnson - 2002 - Released framework with his book Expert One-on-One J2EE Design and Development
+	- 0.9 -> 2003 Initial Release
+	- 1.0 -> 2004 First Production Release
+	- 2.0 -> 2006 XML Configuration
+	- 2.5 -> 2007 Annotation based configuration
+	- 3.0 -> 2009 Java Configuration + Java 5 support
+	- 4.0 -> 2013 Java 8 support
+	- 5.0 -> 2017 Reactive Programming support
+	- 6.2.2 -> Latest version
+	
+	- SpringSource
+	- VMWare <- SpringSource (2009)
+	- EMC <- VMWare 
+	- JV by VMWare + EMC + GE -> Pivotal (2012)
+	- Dell <- EMC (VMWare) <- Pivotal (2019)
+	- Broadcom <- VMWare
+		
+Spring Framework
+	- Architecture and Components
+		
+	- Inversion of Control / Dependency Injection
+	- Project Setup
+	- Hello World Example
+	
+Spring Core	
+	- IoC Instantiation
+		- BeanFactory
+		- ApplicationContext
+	- Bean Instantiation
+		- Constructor
+		- Static Factory
+		- Instance Factory
+	- Injection
+		- Constructor
+		- Setter
+	- Bean Scopes
+		- Singleton
+		- Prototype
+		- Request
+		- Session
+		- Application
+	- Bean Life-Cyle Methods
+		- Init
+		- Destroy
+	- Lazy Init
+	- Autowire
+		- byName
+		- byType
+		- constructor
+		
+	- Annotation Based Configuration
+		- @Component
+			- @Controller
+			- @RestController
+			- @Service
+			- @Repository
+		- @ComponentScan
+		- @Autowired
+		- @Primary
+		- @Qualifier
+		- @Scope
+		- @Lazy
+		- @DependsOn
+		- @Required
+		- @Value
+	
+	- Java Based Configuration
+		- @Configuration
+		- @Bean
+		- @Autowired
+		- @Primary
+		- @Qualifier
+		- @Scope
+		- @Lazy
+		- @DependsOn
+		- @Required
+		- @Value		

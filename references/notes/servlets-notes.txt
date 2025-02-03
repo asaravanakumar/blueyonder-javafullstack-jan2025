@@ -1,0 +1,32 @@
+Java EE Overview
+Webserver vs App Server
+Servlet API overview
+Servlet Lifecycle -> init, service, destroy
+Servlet Interface
+ServletRequest
+ServletResponse
+
+ServletConfig
+ServletContext
+RequestDispatcher
+
+GenericServlet Interface
+HttpServlet Interface
+HttpServletRequest
+HttpServletResponse
+HttpSession
+	Session Management
+	a) Cookies  <- Browser should allow cookies
+	b) Hidden Fields <- keeping session ids as part of hidden fields
+	c) URL Rewriting <- appended as part of request URL
+	
+Redirecting the request
+Forwarding the request -> Request Dispatcher
+Error Handling
+
+Filters
+Listeners
+Servlet Annotations
+	- @WebServlet
+	- @WebFilter
+	- @WebListener

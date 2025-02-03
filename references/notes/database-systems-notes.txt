@@ -1,0 +1,37 @@
+Database Systems
+	- Data Persistence in structured and organized way
+	- Standard Interface to access/manage data
+	
+	- RDBMS
+		- Data Stored in Table format with rows and columns
+		- Normalization
+		- Referential Integrity
+		- Transactional - ACID compliant
+		- SQL (Structured Query Language)
+		
+		- Postgres
+		- IBM DB2
+		- MariaDB
+		- MySQL
+		- MS SQL Server
+		- Oracle
+NoSQL -> Not Only SQL		
+	- Document Database
+		- MongoDB
+		- CouchDB
+		- DocumentDB
+	- Key Value Database
+		- Couchbase
+		- Oracle NoSQL
+		- Dynamo
+	- Columnar Database
+		- Cassendra
+		- Druid
+		- HBase
+	- Graph Database
+		- Neo4J
+		- OrientDB
+	- Object Oriented Database
+		- ObjectDB
+		- JADE	
+	- etc..

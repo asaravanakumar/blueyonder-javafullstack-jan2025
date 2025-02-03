@@ -1,0 +1,60 @@
+Design Principles
+	- Software design principles represent a set of guidelines that helps us to avoid having a bad design.
+	- The design principles are associated to Robert Martin who released in his 2000 paper 
+	- "Agile Software Development: Principles, Patterns, and Practices". 		
+	- According to Robert Martin there are 3 important characteristics of a bad design that should be avoided:
+		Rigidity - It is hard to change because every change affects too many other parts of the system.
+		Fragility - When you make a change, unexpected parts of the system break.
+		Immobility - It is hard to reuse in another app because it cannot be disentangled from the current app
+	- These concepts were later built upon by Michael Feathers, who introduced us to the SOLID acronym.
+	
+	SOLID
+
+	- Single Responsibility Principle
+		A class should have only one reason to change.
+
+	- Open Close Principle
+		Software entities (classes, functions,etc.) should be open for extension but closed for modifications.
+
+	- Liskov's Substitution Principle
+		Derived types must be completely substitutable for their base types.
+
+	- Interface Segregation Principle
+		Clients should not be forced to depend upon interfaces that they don't use.
+	
+	- Dependency Inversion Principle
+		High-level modules should not depend on low-level modules. Both should depend on abstractions.
+		Abstractions should not depend on details. Details should depend on abstractions.
+
+
+Design Patterns
+	- Design patterns represent the best practices used by experienced object-oriented software developers.
+	- Design patterns are solutions to general problems that software developers faced during software development.
+	- These solutions were obtained by trial and error by numerous software developers over quite a substantial period of time.
+	
+GOF (Gang of Four)
+	- In 1994, four authors Erich Gamma, Richard Helm, Ralph Johnson and John Vlissides published a book.
+	- titled Design Patterns - Elements of Reusable Object-Oriented Software which initiated the concept of Design Pattern in Software development.
+	- According to these authors design patterns are primarily based on the following principles of object orientated design.
+		- Program to an interface not an implementation
+		- Favor object composition over inheritance
+
+Design Patterns Usages
+	- Common platform for developers
+		- Design patterns provide a standard terminology and are specific to particular scenario.
+	- Best Practices
+		- Design patterns have been evolved over a period of time and they provide best solutions to certain problems faced during software development
+
+Design Pattern Types
+	- Creational Patterns
+		- Provides a way to create objects while hiding the creation logic, rather than instantiating objects directly using new operator
+		- Gives program more flexibility in deciding which objects need to be created for a given use case.
+	- Structural Patterns
+		- These design patterns concern class and object composition.
+		- Concept of inheritance is used to compose interfaces and define ways to compose objects to obtain new functionalities.
+	- Behavioral Patterns
+		- These design patterns are specifically concerned with communication between objects.
+
+
+
+	

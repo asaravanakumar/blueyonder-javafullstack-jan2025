@@ -1,0 +1,203 @@
+
+Java New Features
+
+	Java 8 Features
+		Functional Programming
+		Lambda Expressions
+		Functional Interfaces
+		Method References
+		Default Methods
+		Stream API
+		New Date/Time
+	
+	Java 9 Features
+
+		JShell - REPL (Read Evaluate Process Loop)
+		Factory Methods for Immutable List, Set and Map - of()
+		Private Methods in Interfaces	
+		Try with Resources Enhancements
+		Stream API Enhancements - takeWhile(), dropWhile()
+
+		Module System (Project JigSaw)
+
+			Modularise the application into modules. Promotes reusability and simplifies custom development and deployment
+
+			Every module has module descriptor and can be build as separate JAR file for deployment
+
+			Module Descriptor - module-info.java
+				exports <package-name>
+				exports <package-name> to <mod-name>
+				requires <mod-name>
+				provides <service-name> with <service-impl-name>
+				uses <service-name>
+				opens <package-name>
+										
+
+
+		Reactive Streams (Specification)
+
+			Asynchronous processing with non-blocking back pressure
+
+			Reactive Manifesto
+				Responsive
+				Resilient
+				Elastic
+				Message Driven
+
+										
+			Reactive Stream Specification
+				
+				Publisher
+					subscribe()
+
+				Subscriber
+						onSubcribe
+						onNext
+						onError
+						onComplete
+
+				Subscription
+						request()
+						cancel()
+			
+				Processor
+
+		 	Reactive Stream Implementation
+
+				Project Reactor => Spring WebFlux
+						Mono, Flux
+							- map, sort, filter, distinct
+						Subscriber
+			
+				java.util.concurrent.Flow => Java 9
+					
+				RxJava => RxJava 2 (ReactiveX)
+
+	Java 10 Features
+		Local Variable Type Inference
+		Optional Enhancements - orElseThrow()
+		Collection Enhancements - copyOf() factory method
+		Stream API Enhancements - Collectors can return unmodifiable collection
+
+	Java 11 Features [LTS]
+		Compile Free Launch -> Launching Single File Source Code Program
+		var in Lambda -> (@NotNull var a, @NotEmpty var b) -> a + b
+		Optional isEmpty support
+		Not Predicate
+		Collection - toArray() default method 
+
+		New methods in String - lines, isBlank, strip, stripTrailing, stringLeading, repeat
+		
+		New Files and Path methods - writeString(), readString()
+		New HttpClient	
+		
+		Other Features  - ASCII, UTF 8, UTF 16, UTF 32
+			Unicode 1-9/10 Support -> 12k+ characters
+			Nest Based Access Control
+			ZGC (Experimental) - Low Latency Garbage Collector
+			Epsilon - No-op Garbage Collector
+			Low Overhead Heap Profiling
+
+		Removed Features
+			Applets
+			Java Web Start
+			JavaFX moved out of JDK -> openjfx.io
+			Java EE and CORBA modules
+			
+	Java 12 Features
+		String class new method - intent(), transform()	
+		New File mismatch method - mismatch() => -1, N
+		Stream Enhancement - Collectors.teeing(downstream1, downstream2, merger) 
+		CompactNumberFormat
+			Preview Features
+				Switch Expression
+				Pattern Matching for instanceOf
+
+			Other Features
+				Unicode 11 Support
+				JVM Constants API
+				Micro Benchmark Suite
+				Default CDS Archive => Reduce Start Time and Memory Footprint
+
+	Java 13 Features
+
+			NIO - ByteBuffer Enhancements - bulk get/put
+
+			Preview Features
+				Switch Expression
+				Text Block
+
+			Other Features
+				Legacy Socket API Reimplemented
+				Unicode 12 Support
+				Dynamic CDS Archive
+				CDS Enhancements
+
+	Java 14 Features
+			
+			Switch Expression
+
+			Preview Features
+				Text Block
+				Pattern Matching for instanceOf
+				Records
+
+			Other Features
+				Helpful NullPointerException
+
+			Deprecated / Removed Features
+				CMS Garbage Collector
+				ParallelScavenge + SerialOld GC Combination
+				Solarix 	and SPARC ports
+
+	Java 15 Features
+			Text Blocks
+				
+			Preview Features
+				Pattern Matching for instanceOf and typeChecks
+				Records
+				Sealed Classes
+
+			Other Features
+				Hidden Classes
+				ZGC and Shenandoah Garbage Collectors
+
+			Deprecated / Removed Features
+				Javascript Nashhorn Engine
+
+	Java 16 Features
+
+			Stream Enhancement - toList()
+
+			Preview Features
+				Pattern Matching for instanceOf and typeChecks
+				Records
+				Sealed Classes
+
+	Java 17 Features (LTS)
+
+			Pattern Matching
+			Switch Expression
+			Records
+				
+			Sealed Classes
+
+			Preview / Incubating Features
+				Pattern Matching for Switch
+				Foreign Function and Memory API 
+				Vector API	
+
+			Other Features	
+				Restore Always-Strict Floating-Point Semantics - strictfp
+				Enhanced Pseudo-Random Number Generators
+				New macOS Rendering Pipeline => OpenGL -> Metal API
+				macOS/AArch64 Port => Intel (AMD64) => M1/M2 (ARM64)
+				Strongly Encapsulate JDK Internals => -illegal-access
+				Context-Specific Deserialization Filters
+				LTS Release Cycle reduced to two years
+
+			Deprecated / Removed Features
+				Deprecate the Applet API for Removal
+				Remove RMI Activation
+				Remove the Experimental AOT and JIT Compiler
+				Deprecate the Security Manager for Removal

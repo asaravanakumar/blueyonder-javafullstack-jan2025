@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.examples.spring.web.mvc</groupId>
+	<artifactId>spring-mvc-examples</artifactId>
+	<name>spring-mvc-examples</name>
+	<packaging>war</packaging>
+	<version>1.0.0-BUILD-SNAPSHOT</version>
+
+	<properties>
+		<java-version>21</java-version>
+		<org.springframework-version>6.2.0</org.springframework-version>
+
+		<servlet-api-version>6.0.0</servlet-api-version>
+		<slf4j-version>1.7.36</slf4j-version>
+		<slf4j-log4j-version>1.7.36</slf4j-log4j-version>
+		<maven-compiler-plugin-version>3.11.0</maven-compiler-plugin-version>
+		<maven-war-plugin-version>3.4.0</maven-war-plugin-version>
+	</properties>
+
+	<dependencies>
+		<!-- Spring Core -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context</artifactId>
+			<version>${org.springframework-version}</version>
+		</dependency>
+
+		<!-- Spring MVC -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-webmvc</artifactId>
+			<version>${org.springframework-version}</version>
+		</dependency>
+
+		<!-- Servlet -->
+<!--		<dependency>-->
+<!--			<groupId>javax.servlet</groupId>-->
+<!--			<artifactId>javax.servlet-api</artifactId>-->
+<!--			<version>${javax.servlet-api-version}</version>-->
+<!--			<scope>provided</scope>-->
+<!--		</dependency>-->
+
+		<dependency>
+			<groupId>jakarta.servlet</groupId>
+			<artifactId>jakarta.servlet-api</artifactId>
+			<version>${servlet-api-version}</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<!-- Logging -->
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>${slf4j-version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-log4j12</artifactId>
+			<version>${slf4j-version}</version>
+		</dependency>
+
+	</dependencies>
+
+	<build>
+		<finalName>spring-mvc-examples</finalName>
+
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>${maven-compiler-plugin-version}</version>
+				<configuration>
+					<source>${java-version}</source>
+					<target>${java-version}</target>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-war-plugin</artifactId>
+				<version>${maven-war-plugin-version}</version>
+			</plugin>
+		</plugins>
+	</build>
+
+</project>

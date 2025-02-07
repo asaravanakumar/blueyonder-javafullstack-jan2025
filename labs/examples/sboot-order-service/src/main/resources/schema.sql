@@ -1,0 +1,7 @@
+CREATE TABLE IF NOT EXISTS orders (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    description VARCHAR(255) NOT NULL,
+    category VARCHAR(100),
+    quantity INT NOT NULL,
+    price DECIMAL(10, 2) NOT NULL
+);

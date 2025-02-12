@@ -1,0 +1,40 @@
+spring:
+  application:
+    name:
+      spring-cloud-cirbreaker-resilience4j
+
+server:
+  port: 8090
+
+resilience4j.circuitbreaker:
+  configs:
+    default:
+      registerHealthIndicator: true
+      #The size of the sliding window that the Circuit Breaker uses to record call outcomes (successes, failures, slow calls).
+      slidingWindowSize: 10
+      #defines the type of the sliding window: COUNT_BASED OR TIME_BASED
+      slidingWindowType: TIME_BASED
+      #The minimum number of calls that must be evaluated (counted) before the Circuit Breaker can calculate the error rate or slow call rate
+      minimumNumberOfCalls: 5
+      #The percentage threshold for slow calls. If the percentage of slow calls is above this threshold, the Circuit Breaker will transition to the open state
+      slowCallRateThreshold: 50
+      #A slow call is defined as a call that exceeds a configurable time limit
+      slowCallDurationThreshold: 2s
+      #The failure rate threshold is the percentage of failed calls out of the total recorded calls that will trigger the Circuit Breaker to open
+      failureRateThreshold: 50
+      #The number of calls that are allowed to pass through when the Circuit Breaker is in the half-open state.
+      permittedNumberOfCallsInHalfOpenState: 3
+      automaticTransitionFromOpenToHalfOpenEnabled: true
+      waitDurationInOpenState: 5s
+      eventConsumerBufferSize: 10
+
+resilience4j.timelimiter:
+  configs:
+    default:
+      timeoutDuration: 2s
+      cancelRunningFuture: true
+
+management:
+  endpoints.web.exposure.include: "*"
+  endpoint.health.show-details: always
+#  health.circuitbreakers.enabled: true

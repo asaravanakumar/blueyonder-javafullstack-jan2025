@@ -1,0 +1,39 @@
+server:
+  port: 8111
+
+spring:
+  application:
+    name: spring-cloud-gateway-service
+  cloud:
+    gateway:
+      routes:
+        - id: configRoute1
+#         uri: http://localhost:9090/products
+          uri: lb://scloud-product-service
+          predicates:
+            - Path=/products
+          filters:
+#           - CircuitBreaker=myCircuitBreaker
+#           - PrefixPath=/api
+#            - StripPrefix=1
+
+# Eureka Client
+eureka:
+  client:
+    service-url:
+      default-zone: http://localhost:8761/eureka
+    register-with-eureka: true
+    fetch-registry: true
+
+# Logging
+logging:
+  level:
+    org.springframework.cloud.gateway: DEBUG
+    org.springframework.web: DEBUG
+
+# Actuator Endpoints
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'

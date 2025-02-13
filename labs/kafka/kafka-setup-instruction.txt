@@ -1,0 +1,42 @@
+#STEP 1: Connect to VM and navigate to ~/blueyonder-javafullstack-jan2025/labs/kafka directory
+cd blueyonder-javafullstack-jan2025/labs/kafka
+
+#STEP 2: Start Kafka and Zookeeper from confluent-kafka-kraft-docker-compose file
+docker compose -f confluent-kafka-kraft-docker-compose up -d
+
+#STEP 3: Verify Kafka is up and running. Should list Kafka ontainers.
+docker ps
+
+#STEP 4: Connect to Kafka container
+docker exec -it kafka-kafka-1 bash
+
+#STEP 5: Navigate to Kafka home directory
+cd /opt/bitnami/kafka
+
+#STEP 6: Run below command to list kafka topics
+bin/kafka-topics.sh --list --bootstrap-server localhost:9092
+
+#STEP 7: Run below command to create kafka topic
+bin/kafka-topics.sh --create --bootstrap-server localhost:9092 --replication-factor 1 --partitions 1 --topic test
+
+#STEP 8: Run below command to describe kafka topic
+bin/kafka-topics.sh --describe --bootstrap-server localhost:9092 --topic test
+
+#STEP 9: Run below command to run console kafka producer (open new terminal and follow STEP 4 & 5)
+bin/kafka-console-producer.sh --broker-list localhost:9092 --topic test
+
+#STEP 10: Run below command to run conosle kafka consumer (open new terminal and follow STEP 4 & 5)
+bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic test --group test-group
+
+#STEP 11: Run below command to list consumer groups
+bin/kafka-consumer-groups.sh --bootstrap-server localhost:9092 --list
+
+#STEP 12: Run below command to describe consumer groups
+bin/kafka-consumer-groups.sh --bootstrap-server localhost:9092 --describe --group test-group
+
+#STEP 13: Run below command to stop Kafka and Zookeeper from docker compose (use existing or open new terminal and follow STEP 1)
+sudo docker compose -f kafka-docker-compose.yml down
+
+###Commands to find existing process for given IP and kill
+netstat -anop | grep "8080" | find "LISTEN"
+sudo kill -9 8080

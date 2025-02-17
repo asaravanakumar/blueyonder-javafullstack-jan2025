@@ -1,0 +1,95 @@
+{
+	"variables": [],
+	"info": {
+		"name": "ShoppingCartApp",
+		"_postman_id": "fb41ea35-19a3-b37f-8740-8b3030af50fe",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get Products",
+			"request": {
+				"url": "http://localhost:8111/shoppingcart/api/products",
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Create Product",
+			"request": {
+				"url": "http://localhost:8111/shoppingcart/api/products",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"id\": \"1\",\r\n\t\"name\":\"iPhone 13\",\r\n\t\"category\": \"Mobiles\",\r\n\t\"Manufacturer\": \"Apple\"\r\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Get Customers",
+			"request": {
+				"url": "http://localhost:8111/shoppingcart/api/customers",
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Create Customer",
+			"request": {
+				"url": "http://localhost:8111/shoppingcart/api/customers",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"Anil\",\r\n    \"age\":30,\r\n    \"gender\":\"Male\",\r\n    \"creditLimit\":10000,\r\n    \"address\":\"Marathahalli\",\r\n    \"location\":\"Bengaluru\",\r\n    \"prime\":true\r\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Get Orders",
+			"request": {
+				"url": "http://localhost:8111/shoppingcart/api/orders",
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Create Orders",
+			"request": {
+				"url": "http://localhost:8111/shoppingcart/api/orders",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"customerId\":\"1\",\r\n    \"productId\":1,\r\n     \"quantity\":1,\r\n     \"price\":79000\r\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}

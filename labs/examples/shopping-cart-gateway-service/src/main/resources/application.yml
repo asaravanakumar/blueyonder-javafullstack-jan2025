@@ -1,0 +1,50 @@
+server:
+  port: 8111
+
+spring:
+  application:
+    name: gateway-service
+#  cloud.gateway.mvc:
+  cloud.gateway:
+    routes:
+      - id: configRoute1
+        uri: lb://product-service
+        predicates:
+          - Path=/shoppingcart/api/products/**
+          - Method=GET,POST,PUT,DELETE
+        filters:
+          - StripPrefix=2
+
+      - id: configRoute2
+        uri: lb://customer-service
+        predicates:
+          - Path=/shoppingcart/api/customers/**
+          - Method=GET,POST,PUT,DELETE
+        filters:
+          - StripPrefix=2
+
+      - id: configRoute3
+        uri: lb://order-service
+        predicates:
+          - Path=/shoppingcart/api/orders/**
+          - Method=GET,POST,PUT,DELETE
+        filters:
+          - StripPrefix=2
+
+
+# Eureka Client
+eureka:
+  client:
+    service-url:
+      defaultZone: http://${REGISTRY_SERVER_HOST:localhost}:8761/eureka
+    register-with-eureka: true
+    fetch-registry: true
+
+# Enable all actuator endpoints
+management:
+  endpoints:
+    web:
+      exposure:
+        include:
+          - "*"
+

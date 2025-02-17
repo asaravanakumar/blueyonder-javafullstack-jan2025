@@ -1,0 +1,193 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"> 
+  <title>Coverage Report > ProductServiceController</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">com.examples.scart.product.controller</a>
+</div>
+
+<h1>Coverage Summary for Class: ProductServiceController (com.examples.scart.product.controller)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">ProductServiceController</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    66.7%
+  </span>
+  <span class="absValue">
+    (4/6)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    60%
+  </span>
+  <span class="absValue">
+    (6/10)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package com.examples.scart.product.controller;
+&nbsp;
+&nbsp;import java.util.HashMap;
+&nbsp;import java.util.Map;
+&nbsp;
+&nbsp;import org.slf4j.Logger;
+&nbsp;import org.slf4j.LoggerFactory;
+&nbsp;import org.springframework.beans.factory.annotation.Autowired;
+&nbsp;import org.springframework.http.HttpStatus;
+&nbsp;import org.springframework.http.ResponseEntity;
+&nbsp;import org.springframework.web.bind.annotation.DeleteMapping;
+&nbsp;import org.springframework.web.bind.annotation.GetMapping;
+&nbsp;import org.springframework.web.bind.annotation.PathVariable;
+&nbsp;import org.springframework.web.bind.annotation.PostMapping;
+&nbsp;import org.springframework.web.bind.annotation.PutMapping;
+&nbsp;import org.springframework.web.bind.annotation.RequestBody;
+&nbsp;import org.springframework.web.bind.annotation.RequestMapping;
+&nbsp;import org.springframework.web.bind.annotation.RestController;
+&nbsp;
+&nbsp;import com.examples.scart.product.model.Product;
+&nbsp;import com.examples.scart.product.service.ProductService;
+&nbsp;
+&nbsp;@RestController
+&nbsp;@RequestMapping(&quot;/&quot;)
+&nbsp;//@RequestMapping(&quot;/products&quot;)
+<b class="fc">&nbsp;public class ProductServiceController {</b>
+&nbsp;//   private static Map&lt;String, Product&gt; productRepo = new HashMap&lt;&gt;();
+<b class="fc">&nbsp;   private static Logger log = LoggerFactory.getLogger(ProductServiceController.class);</b>
+&nbsp;   
+&nbsp;   @Autowired
+&nbsp;   ProductService productService;
+&nbsp;   
+&nbsp;   
+&nbsp;//   static {
+&nbsp;//      Product mobile = new Product();
+&nbsp;//      mobile.setId(&quot;1&quot;);
+&nbsp;//      mobile.setName(&quot;Samsung Galaxy Note10&quot;);      
+&nbsp;//      mobile.setCategory(&quot;Mobiles&quot;);
+&nbsp;//      mobile.setManufacturer(&quot;Samsung&quot;);
+&nbsp;//      productRepo.put(mobile.getId(), mobile);
+&nbsp;//      
+&nbsp;//      Product laptop = new Product();
+&nbsp;//      laptop.setId(&quot;2&quot;);
+&nbsp;//      laptop.setName(&quot;Lenovo Thinkpad E490&quot;);
+&nbsp;//      laptop.setCategory(&quot;Laptops&quot;);
+&nbsp;//      laptop.setManufacturer(&quot;Samsung&quot;);      
+&nbsp;//      productRepo.put(laptop.getId(), laptop);
+&nbsp;//   }
+&nbsp;   
+&nbsp;   @DeleteMapping(&quot;/{id}&quot;)
+&nbsp;   public ResponseEntity&lt;Object&gt; delete(@PathVariable(&quot;id&quot;) String id) { 
+&nbsp;//      productRepo.remove(id);
+&nbsp;	   
+<b class="nc">&nbsp;	   productService.deleteProduct(id);</b>
+&nbsp;	   
+<b class="nc">&nbsp;      return new ResponseEntity&lt;&gt;(&quot;Product is deleted successsfully&quot;, HttpStatus.OK);</b>
+&nbsp;   }
+&nbsp;   
+&nbsp;   @PutMapping(&quot;/{id}&quot;)
+&nbsp;   public ResponseEntity&lt;Object&gt; updateProduct(@PathVariable(&quot;id&quot;) String id, @RequestBody Product product) { 
+&nbsp;//      productRepo.remove(id);
+&nbsp;//      product.setId(id);
+&nbsp;//      productRepo.put(id, product);
+&nbsp;	   
+<b class="nc">&nbsp;	   productService.updateProduct(id, product);</b>
+&nbsp;	   
+<b class="nc">&nbsp;      return new ResponseEntity&lt;&gt;(&quot;Product is updated successsfully&quot;, HttpStatus.OK);</b>
+&nbsp;   }
+&nbsp;   
+&nbsp;   @PostMapping
+&nbsp;   public ResponseEntity&lt;String&gt; createProduct(@RequestBody Product product)  {
+&nbsp;	   
+&nbsp;//      productRepo.put(product.getId(), product);
+&nbsp;	   
+<b class="fc">&nbsp;	   productService.createProduct(product);</b>
+&nbsp;	   
+<b class="fc">&nbsp;      return new ResponseEntity&lt;&gt;(&quot;Product is created successfully&quot;, HttpStatus.CREATED);</b>
+&nbsp;   }
+&nbsp;   
+&nbsp;   @GetMapping
+&nbsp;   public ResponseEntity&lt;Object&gt; getProduct() throws InterruptedException {
+<b class="fc">&nbsp;	  log.info(&quot;Received request to list products...&quot;);</b>
+&nbsp;
+&nbsp;	  
+&nbsp;//      return new ResponseEntity&lt;&gt;(productRepo.values(), HttpStatus.OK);
+&nbsp;	  
+<b class="fc">&nbsp;	  return new ResponseEntity&lt;&gt;(productService.getProducts(), HttpStatus.OK);</b>
+&nbsp;   }
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2024-02-23 10:59</div>
+</div>
+</body>
+</html>

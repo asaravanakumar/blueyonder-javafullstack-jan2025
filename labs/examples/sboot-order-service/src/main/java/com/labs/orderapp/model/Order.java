@@ -12,8 +12,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 @ToString
 @NoArgsConstructor
 @AllArgsConstructor
+@Builder
 @Entity
-@Table(name = "orders1")
+@Table(name = "orders")
 public class Order {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -26,4 +27,7 @@ public class Order {
     private int quantity;
     @Positive(message = "Price must be positive")
     private double price;
+
+    public Order(String lenovoThinkPad, String laptops, int i, double v) {
+    }
 }

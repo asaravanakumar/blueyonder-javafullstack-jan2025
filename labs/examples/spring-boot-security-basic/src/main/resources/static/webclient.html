@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+	<div id="demo">
+
+		<h2>Spring Security Basic - List Registered Users</h2>
+
+		<button type="button" onclick="loadDoc('http://localhost:8080/users', myFunction)">List Registered Users</button>
+	</div>
+	
+	<div id="results">
+	</div>	
+
+	<script>
+		function loadDoc(url, cFunction) {
+			var xhttp;
+			xhttp = new XMLHttpRequest();
+			
+			xhttp.onreadystatechange = function() {
+				console.log('state:'+this.readyState);
+				if (this.readyState == 4 && this.status == 200) {
+					cFunction(this);
+				}
+			};
+			xhttp.open("GET", url, true);
+			xhttp.setRequestHeader("Accept", "application/json");
+			xhttp.send();
+		}
+		function myFunction(xhttp) {
+			document.getElementById("results").innerHTML = xhttp.responseText;
+		}
+	</script>
+</body>
+</html>

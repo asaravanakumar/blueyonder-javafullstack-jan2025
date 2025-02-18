@@ -37,7 +37,7 @@ public class OrderController {
 //    DELETE	/orders/{id}
 
     // http://localhost:8080/orders
-    @GetMapping(produces = {MediaType.APPLICATION_XML_VALUE,MediaType.APPLICATION_JSON_VALUE})
+    @GetMapping(produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE})
     public ResponseEntity<Collection<Order>> getAllOrders() {
 //        Order order1 = new Order(100, "Lenovo ThinkPad", "Laptop", 1000, 50000.0);
 //        Order order2 = new Order(101, "iPhone 12", "Mobile Phone", 10, 100000.0);

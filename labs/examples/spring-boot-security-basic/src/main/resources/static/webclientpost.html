@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+	<div id="demo">
+
+		<h2>Spring Security Basic - Authenticate</h2>
+
+		<button type="button" onclick="loadDoc('http://localhost:8080/authenticate', myFunction)">Authenticate</button>
+	</div>
+	
+	<div id="results">
+	</div>		
+	
+
+	<script>
+		function loadDoc(url, cFunction) {
+			var xhttp;
+			xhttp = new XMLHttpRequest();
+			xhttp.onreadystatechange = function() {
+				console.log(this.readyState + ' ' + this.status);
+				if (this.readyState == 4 && this.status == 200) {
+					cFunction(this);
+				}
+			};
+			xhttp.open("POST", url, true);
+			xhttp.setRequestHeader("Content-type", "application/json");
+			xhttp.setRequestHeader("Authorization", "Basic YXJ1bjphcnVu");
+			xhttp.send();			
+		}
+		function myFunction(xhttp) {
+			console.log(xhttp.responseText);
+			document.getElementById("results").innerHTML = xhttp.responseText;
+		}
+	</script>
+</body>
+</html>

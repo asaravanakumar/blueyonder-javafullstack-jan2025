@@ -1,0 +1,7 @@
+security:
+  jwt:
+    secret-key: springsecurityjwtsecret
+    token-duration: 1D
+
+server:
+  port: 7071

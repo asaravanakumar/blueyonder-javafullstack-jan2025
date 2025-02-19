@@ -1,0 +1,184 @@
+#Docker Windows
+Launch Docker Quicksart Terminal (From shortcut in Desktop OR Windows Programs)
+
+#Docker Mac
+Launch Docker App 	=> Starts Docker Daemon
+Open Terminal => Run docker commands
+
+#How to connect to Docker Host VM on Mac
+screen ~/Library/Containers/com.docker.docker/Data/vms/0/tty	=> Connects to Docker Daemon VM
+docker run -it --privileged --pid=host justincormack/nsenter1	=> Alternative to connect to Docker Daemon VM
+
+#How to connect to Docker Host VM on Windows
+Go to Hyper-v manager -> Linuxkit VM / Moby VM -> Connect to the VM
+
+#Working with Docker (Essential Commands)
+docker version											(=> Docker version)
+docker info												(=> Docker details)
+docker images											(=> Lists images)
+docker ps												(=> Lists active containers)
+docker ps -as											(=> Lists all containers)
+docker run <image path> <optional args>					(=> Starts container)
+docker run -e "env_var_name=another_value" <image id>	(=> Start container with environmental variables)
+docker stop <container id/name>							(=> Stop container)
+docker start <container id/name>						(=> Stop container)
+docker rm <container id/name>							(=> Remove container)
+docker rmi <image id/name>								(=> Remove image)
+docker pull <image id/name>								(=> Pull image from Hub)
+docker inspect <container id/name>						(=> List docker container detail)
+docker build <dockerfilepath> <target image path>		(=> Build image from Dockerfile)
+docker build -t <imagename> --build-arg JAR_FILE=<path> .(=> Build image with command line args)
+docker exec -it <container name> /bin/bash				(=> Connect to running container in bash mode)
+docker exec -it <container name> /bin/sh				(=> Connect to running container in sh mode)
+docker commit <container name> <imagename>				(=> Commits container changes into an image)
+
+#Working with Docker (All Commands)
+docker attach <container id/name>						(=> Attach local standard input, output, and error streams to a running container)
+docker build <docfilepath> <targetimage> <docfiledir>	(=> Build an image from a Dockerfile)
+docker commit <container name> <imagename>			    (=> Create a new image from a container's changes)
+docker cp <srcpath> <targetpath>						(=> Copy files/folders between a container and the local filesystem)
+docker create <containeroptions> <imagename>			(=> Create a new container)
+docker diff <container id/name>							(=> Inspect changes to files or directories on a container's filesystem)
+docker events      										(=> Get real time events from the server)
+docker exec  -it <container name> <commands>			(=> Run a command in a running container)
+docker export      										(=> Export a container's filesystem as a tar archive)
+docker history <image id/name>							(=> Show the history of an image)
+docker images     										(=> List images)
+docker import      										(=> Import the contents from a tarball to create a filesystem image)
+docker info        										(=> Display system-wide information)
+docker inspect <container id/name>						(=> Return low-level information on Docker objects)
+docker kill <container id/name>							(=> Kill one or more running containers)
+docker load        										(=> Load an image from a tar archive or STDIN)
+docker login       										(=> Log in to a Docker registry)
+docker logout      										(=> Log out from a Docker registry)
+docker logs <container id/name>							(=> Fetch the logs of a container)
+docker pause <container id/name>						(=> Pause all processes within one or more containers)
+docker port  <container id/name>						(=> List port mappings or a specific mapping for the container)
+docker ps        										(=> List active containers)
+docker ps -a       										(=> List all containers)
+docker pull <image name>								(=> Pull an image or a repository from a registry)
+docker push <image name>								(=> Push an image or a repository to a registry)
+docker rename <container name>  <container newname>		(=> Rename a container)
+docker restart  <container id/name>						(=> Restart one or more containers)
+docker rm <container id/name>      						(=> Remove one or more containers)
+docker rmi <image id/name>         						(=> Remove one or more images)
+docker run <image name>									(=> Run a command in a new container)
+docker save 											(=> Save one or more images to a tar archive (streamed to STDOUT by default))
+docker search      										(=> Search the Docker Hub for images)
+docker start  <container id/name>						(=> Start one or more stopped containers)
+docker stats  <container id/name>						(=> Display a live stream of container(s) resource usage statistics)
+docker stop  <container id/name>						(=> Stop one or more running containers)
+docker tag <sourceimage:tag> <targetimage:tag>			(=> Create a tag TARGET_IMAGE that refers to SOURCE_IMAGE)
+docker top <container id/name>							(=> Display the running processes of a container)
+docker unpause  <container id/name>						(=> Unpause all processes within one or more containers)
+docker update  <container id/name>						(=> Update configuration of one or more containers)
+docker version     										(=> Show the Docker version information)
+docker wait  <container id/name>						(=> Block until one or more containers stop, then print their exit codes)
+
+#Docker Getting Started
+docker run -d -p 80:80 docker/getting-started
+
+#Hello World Docker Example
+docker build -t hello-world-docker:latest .
+docker run -d -p 8080:8080 --name="hello-docker" hello-world-docker
+
+#Hello World Docker Example with build argument
+docker build -t hello-world-docker:latest --build-arg JAR_FILE=./target/*.jar .
+
+#Hello World Docker Example with environmental variable
+docker run -p 8090:9090 -e "SERVER_PORT=9090" hello-world-docker
+
+#Jenkins Docker image setup Example
+docker pull jenkins
+docker run -p 8080:8080 -p 50000:50000 jenkins
+3df307ca21874a66a0d10a8a9c3bb8		(=> Auth key)
+
+#Ngnix
+docker run --detach --publish=80:80 --name=webserver nginx
+docker run -d -p 80:80 --name=webserver nginx
+
+#MySQL
+docker run -d --name mysql -e MYSQL_ROOT_PASSWORD=root -p 3306:3306 mysql
+
+#Save Image to Disk
+docker save -o images.tar image1 [image2 ..]
+
+#Load Image from Disk
+docker load -i images.tar
+
+#Export Container to Disk
+docker export -o myContainner1.tar container1
+
+#Import Container from Disk
+docker import myContainer1
+
+
+#Delete image
+docker image rm <imageid>
+docker image rm <imageid>
+docker rmi <imageid>
+
+#Login to DockerHub
+docker login
+
+#Tag image
+docker tag <sourceimage:tag> <targetimage:tag>
+
+docker tag hello-world-docker dockrtraining/hello-docker
+
+#Push image to DockerHub Registry
+docker push username/repository:tag
+
+docker push dockrtraining/hello-world-docker
+
+#Pull image from DockerHub Registry
+docker pull dockrtraining/hello-world-docker
+
+#List Docker Images
+docker image ls
+
+#Run Docker image
+docker run -p 8080:8080 username/repository:tag
+
+docker run -d -p 8080:8080 dockrtraining/hello-world-docker
+
+#Logout from DockerHub
+docker logout
+
+##Storage
+##bind mount
+#bind mount (with --mount option)
+docker run -d --name bindtest --mount type=bind,source=/home/docker,target=/app nginx:latest
+
+#bind mount (with -v option)
+docker run -d --name bindtest -v /home/docker:/app nginx:latest
+
+#verify that mount is a bind mount
+docker container inspect bindtest			(=> check Mounts section)
+docker exec -it bindtest bash				(=> check dir /app, write some data and stop/start container n verify)
+
+##volumes
+#volume mount (with --mount option)
+docker run -d --name voltest --mount source=testvol,target=/app nginx:latest
+
+#volume mount (with -v option)
+docker run -d --name voltest -v testvol:/app nginx:latest
+
+#verify that mount is a volume
+docker container inspect voltest			(=> check Mounts section)
+docker exec -it voltest bash				(=> check dir /app, write some data and stop/start container n verify)
+
+##tmpfs
+#temp mount with --mount option
+docker run -d --name tmptest --mount type=tmpfs,destination=/app nginx:latest
+
+#temp mount with --tmpfs option
+docker run -d --name tmptest --tmpfs /app nginx:latest
+
+#temp mount with volume option
+docker volume create --driver local --opt type=tmpfs --opt device=tmpfs temp
+docker run -d --name tmptest1 -v temp:/app nginx:latest
+
+#verify that mount is a tmpfs mount
+docker container inspect tmptest			(=> check Mounts section)
+docker exec -it temptest bash				(=> check dir /app, write some data and stop/start container n verify)

@@ -1,0 +1,110 @@
+#Dockerize Registry Service
+${PROJECT_HOME}/labs/examples/shopping-cart-registry
+#Linux/Mac
+chmod +x mvnw
+./mvnw clean install -DskipTests
+docker build --platform linux/amd64,linux/arm64 -t scart/registry-service:latest .
+#Windows
+mvnw clean install -DskipTests
+docker build --platform linux/amd64,linux/arm64 -t scart/registry-service:latest .
+
+#Dockerize Product Service
+${PROJECT_HOME}/labs/examples/shopping-cart-product-service
+#Linux/Mac
+chmod +x mvnw
+./mvnw clean install -DskipTests
+docker build --platform linux/amd64,linux/arm64 -t scart/product-service:latest .
+#Windows
+mvnw clean install -DskipTests
+docker build --platform linux/amd64,linux/arm64 -t scart/product-service:latest .
+
+#Dockerize Customer Service
+${PROJECT_HOME}/labs/examples/shopping-cart-customer-service
+#Linux/Mac
+chmod +x mvnw
+./mvnw clean install -DskipTests
+docker build --platform linux/amd64,linux/arm64 -t scart/customer-service:latest .
+#Windows
+mvnw clean install -DskipTests
+docker build --platform linux/amd64,linux/arm64 -t scart/customer-service:latest .
+
+#Dockerize Order Service
+${PROJECT_HOME}/labs/examples/shopping-cart-order-service
+#Linux/Mac
+chmod +x mvnw
+./mvnw clean install -DskipTests
+docker build --platform linux/amd64,linux/arm64 -t scart/order-service:latest .
+#Windows
+mvnw clean install -DskipTests
+docker build --platform linux/amd64,linux/arm64 -t scart/order-service:latest .
+
+#Dockerize Gateway Service
+${PROJECT_HOME}/labs/examples/shopping-cart-gateway-service
+#Linux/Mac
+chmod +x mvnw
+./mvnw clean install -DskipTests
+docker build --platform linux/amd64,linux/arm64 -t scart/gateway-service:latest .
+#Windows
+mvnw clean install -DskipTests
+docker build --platform linux/amd64,linux/arm64 -t scart/gateway-service:latest .
+
+#Dockerize Admin Service
+${PROJECT_HOME}/labs/examples/shopping-cart-admin-service
+#Linux/Mac
+chmod +x mvnw
+./mvnw clean install -DskipTests
+docker build --platform linux/amd64,linux/arm64 -t scart/admin-service:latest .
+#Windows
+mvnw clean install -DskipTests
+docker build --platform linux/amd64,linux/arm64 -t scart/admin-service:latest .
+
+#Run Registry, Product and Gateway Services as docker containers
+docker run -d --name=registry-service -p 8761:8761 --network=scart scart/registry-service
+
+docker run -d --name=product-service -p 8091:8091 -e "REGISTRY_SERVER_HOST=registry-service" scart/product-service
+
+docker run -d --name=gateway-service -p 8111:8111 -e "REGISTRY_SERVER_HOST=registry-service" scart/gateway-service
+
+docker run -d --name=admin-service -p 7777:7777 -e "REGISTRY_SERVER_HOST=kafka1" scart/admin-service
+
+#Start Kafka
+#docker-compose -f docker-compose-kafka.yml up -d
+docker-compose -f confluent-kafka-kraft-docker-compose.yml up -d
+
+#Run Customer and Order Services as docker containers
+docker run -d --name=customer-service -p 8092:8092 -e "REGISTRY_SERVER_HOST=registry-service" -e "KAFKA_BOOTSTRAP_SERVERS=kafka1:9092" scart/customer-service
+
+docker run -d --name=order-service -p 8093:8093 -e "REGISTRY_SERVER_HOST=registry-service" -e "KAFKA_BOOTSTRAP_SERVERS=kafka1:9092" scart/order-service
+
+#Create Products
+POST http://localhost:8111/shoppingcart/api/products
+
+{
+	"id": "1",
+	"name":"iPhone 15",
+	"category": "Mobiles",
+	"manufacturer": "Apple"
+}
+
+#Create Customers
+POST http://localhost:8111/shoppingcart/api/customer/customers
+
+{
+    "name": "Anil",
+    "age": 40,
+    "gender": "Male",
+    "prime": false,
+    "creditLimit": 10000,
+    "address": "Koramangala",
+    "location": "Bangalore"
+}
+
+#Create Orders
+POST http://localhost:8111/shoppingcart/api/order/orders
+
+{
+    "customerId": "1",
+	"productId": 2,
+    "quantity": 1,
+    "price": 2000
+}

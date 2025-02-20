@@ -10,6 +10,8 @@ eureka:
   client:
     fetch-registry: false
     register-with-eureka: false
+  instance:
+    prefer-ip-address: true
 
 #Expose all Actuator endpoints
 management:

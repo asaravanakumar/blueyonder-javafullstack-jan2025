@@ -58,23 +58,27 @@ docker build --platform linux/amd64,linux/arm64 -t scart/admin-service:latest .
 mvnw clean install -DskipTests
 docker build --platform linux/amd64,linux/arm64 -t scart/admin-service:latest .
 
+
+#Create network
+docker network create scart-net
+
 #Run Registry, Product and Gateway Services as docker containers
-docker run -d --name=registry-service -p 8761:8761 --network=scart scart/registry-service
+docker run -d --name=registry-service -p 8761:8761 --network scart-net scart/registry-service
 
-docker run -d --name=product-service -p 8091:8091 -e "REGISTRY_SERVER_HOST=registry-service" scart/product-service
+docker run -d --name=product-service -p 8091:8091 --network scart-net -e "REGISTRY_SERVER_HOST=10.152.255.91" scart/product-service
 
-docker run -d --name=gateway-service -p 8111:8111 -e "REGISTRY_SERVER_HOST=registry-service" scart/gateway-service
+docker run -d --name=gateway-service -p 8111:8111 --network scart-net -e "REGISTRY_SERVER_HOST=10.152.255.91 scart/gateway-service
 
-docker run -d --name=admin-service -p 7777:7777 -e "REGISTRY_SERVER_HOST=kafka1" scart/admin-service
+docker run -d --name=admin-service -p 7777:7777 --network scart-net -e "REGISTRY_SERVER_HOST=10.152.255.91" scart/admin-service
 
 #Start Kafka
 #docker-compose -f docker-compose-kafka.yml up -d
 docker-compose -f confluent-kafka-kraft-docker-compose.yml up -d
 
 #Run Customer and Order Services as docker containers
-docker run -d --name=customer-service -p 8092:8092 -e "REGISTRY_SERVER_HOST=registry-service" -e "KAFKA_BOOTSTRAP_SERVERS=kafka1:9092" scart/customer-service
+docker run -d --name=customer-service -p 8092:8092 --network scart-net -e "REGISTRY_SERVER_HOST=10.152.255.91" -e "KAFKA_BOOTSTRAP_SERVERS=10.152.255.91:9092" scart/customer-service
 
-docker run -d --name=order-service -p 8093:8093 -e "REGISTRY_SERVER_HOST=registry-service" -e "KAFKA_BOOTSTRAP_SERVERS=kafka1:9092" scart/order-service
+docker run -d --name=order-service -p 8093:8093 --network scart-net -e "REGISTRY_SERVER_HOST=10.152.255.91" -e "KAFKA_BOOTSTRAP_SERVERS=10.152.255.91:9092" scart/order-service
 
 #Create Products
 POST http://localhost:8111/shoppingcart/api/products

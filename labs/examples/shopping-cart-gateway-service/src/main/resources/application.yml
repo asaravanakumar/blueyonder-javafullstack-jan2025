@@ -39,6 +39,8 @@ eureka:
       defaultZone: http://${REGISTRY_SERVER_HOST:localhost}:8761/eureka
     register-with-eureka: true
     fetch-registry: true
+  instance:
+    prefer-ip-address: true
 
 # Enable all actuator endpoints
 management:

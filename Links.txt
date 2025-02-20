@@ -25,3 +25,7 @@ https://docs.google.com/forms/d/e/1FAIpQLSdicCkH9zkYdfTfdBp2JbVU7i2y_-QWDvHgRu-E
 Assessment #5 - Spring Boot, REST and JPA
 
 https://docs.google.com/forms/d/e/1FAIpQLSfpXwYR2phWOvWjqbYrTaWSL1Ujsir2I7ToERdyui9AiL7YyQ/viewform?usp=header
+
+Assessment #6 - Microservices, Spring Cloud, Kafka, Security
+
+https://docs.google.com/forms/d/e/1FAIpQLSex-17oGPTNYAG0tZvU74IG4tpzVeG748cVbS6GptUJvYspOw/viewform?usp=header

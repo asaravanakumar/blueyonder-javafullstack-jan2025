@@ -1,0 +1,37 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: admin-service
+  labels:
+    app: admin-service
+spec:
+  type: LoadBalancer
+  selector:
+    app: admin-service  
+  ports:
+  - port: 7777
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: admin-service
+  labels:
+    app: admin-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: admin-service
+  template:
+    metadata:
+      labels:
+        app: admin-service
+    spec:
+      containers:
+      - name: admin-service
+        image: dockrtraining/admin-service
+        ports:
+        - containerPort: 7777
+        env:
+        - name: REGISTRY_SERVER_HOST
+          value: registry-service   

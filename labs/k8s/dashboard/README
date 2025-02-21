@@ -1,0 +1,32 @@
+Reference Link [Dashboard Activation]:
+https://github.com/kubernetes/dashboard/blob/master/docs/user/access-control/creating-sample-user.md
+
+Steps to activate K8s Dashboard:
+
+STEP 01: kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/v2.7.0/aio/deploy/recommended.yaml
+
+STEP 02: Pull latest changes and navigate to $REPO_HOME/labs/k8s/dashboard and run below command
+
+kubectl apply -f dashboard-adminuser.yaml
+
+STEP 03: Open new terminal and run below command and keep it open.
+
+kubectl proxy
+
+STEP 04: Open below link to access the dashboard
+
+http://localhost:8001/api/v1/namespaces/kubernetes-dashboard/services/https:kubernetes-dashboard:/proxy/
+
+STEP 05: Run below command to generate bearer token to login into K8s Dashboard
+
+kubectl -n kubernetes-dashboard create token admin-user
+
+
+
+Deploying Product Service into K8s:
+
+Step 01: Pull latest changes and navigate to $REPO_HOME/labs/k8s and run below command
+
+Step 02: kubectl create -f product-service.yaml
+
+STEP 03: Open below link to verify - http://localhost:8082/products

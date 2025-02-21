@@ -1,0 +1,134 @@
+#Open Windows Powershell as Administrator
+#Run below commands on Powershell
+
+#Starting Kubernetes
+minikube start			(=> will start minikube for windows and may take few minutes)
+kubectl cluster-info	(=> shows k8s master url)
+minikube dashboard 		(=> opens minikube dashboard in browser)
+minikube dashboard --url(=> prints dashboard url)
+minikube start --vm-driver=none (=> will start minikube without vm driver for linux environment)
+minikube start --vm-driver=hyperkit (=> will start minikube for mac environment)
+minikube start --vm-driver=hyperkit --hyperkit-vpnkit-sock=/Users/<username>/Library/Containers/com.docker.docker/Data/vpnkit.eth.sock (=> will start minikube for mac environment with fix for dashboard/deployment issue)
+
+#Check Minikube status
+minikube status
+#Connect to Minikube VM
+minikube ssh
+#Stoping Kubernetes
+minikube stop
+
+#Deleting Minikube Cluster
+minikube delete
+
+#Connect to Minikube Docker Daemon
+#For Windows (Powershell)
+minikube docker-env | Invoke-Expression
+#For Linux/Mac
+eval $(minikube docker-env)		=> Enabling to use Minikube Docker Daemon
+eval $(minikube docker-env -u)	=> Disabling Minikube Docker Daemon
+
+#List Docker images available in Minikube registry
+docker images	=> Lists docker images available in Minikube Docker Daemon
+
+#Navigate to Project directory to build Docker images
+e.g: cd D:\Training\sap-ariba_docker_k8s\labs\examples\spring-boot-docker-hello-world
+
+#Build Docker image and add into Minikube Docker Registry
+docker build -t hello-world-docker:v1 --build-arg JAR_FILE=./target/*.jar .
+docker build -t hello-world-docker:v1 .
+
+#Push Docker image into Docker public registry
+docker tag hello-world-docker:v1 dockrtraining/hello-world-docker:v1
+docker login [provide docker account credentials]
+docker push dockrtraining/hello-world-docker:v1
+docker logout
+
+#Running Docker container inside Minikube
+kubectl run helloworld-service --image=dockrtraining/hello-world-docker:v1 --port=8080
+kubectl run webserver --image=nginx:latest --port=80
+
+kubectl run registry-service --image=scart/registry-service:v1 --port=8761
+kubectl run product-service --image=scart/product-service:v1 --env="REGISTRY_SERVER_HOST=192.168.99.104" --port=8091
+
+#List pods
+kubectl get pods
+
+#Create nginx deployment with manifest file
+kubectl apply -f https://raw.githubusercontent.com/kubernetes/website/master/content/en/examples/controllers/nginx-deployment.yaml
+
+#List app deployments
+kubectl get deployments
+
+#Expose application as service to access from outside
+kubectl expose pod helloworld-clustip-service --type=ClusterIP --port=9090 --target-port=8080
+kubectl expose pod helloworld-nodeprt-service  --type=NodePort --port=9090 --target-port=8080 --external-ip=192.168.99.104
+kubectl expose pod helloworld-loadbnr-service  --type=LoadBalancer --port=9090 --target-port=8080 --external-ip=192.168.99.104
+
+kubectl expose pod webserver --type=NodePort --port=8761 --target-port=8761 --external-ip=192.168.99.104
+
+kubectl expose deployment nginx-deployment --type=LoadBalancer --port=81 --target-port=80 --external-ip=192.168.99.104
+kubectl expose deployment registry-service --type=LoadBalancer --port=8761 --target-port=8761 --external-ip=192.168.99.104
+kubectl expose deployment product-service --type=LoadBalancer --port=8091 --target-port=8091 --external-ip=192.168.99.104
+
+#List services
+kubectl get services
+
+#List replicasets
+kubectl get rs
+
+#Autoscale deployment
+#metrics-server addon should be enabled for autoscaling to work
+minikube addons enable metrics-server
+kubectl autoscale deployment nginx-deployment --min=2 --max=5
+#Autoscale replicaset
+kubectl autoscale rs replica-set-name --min=2 --max=5 --cpu-percent=80
+
+#List autoscalers
+kubectl get hpa
+
+#Launch app and opens in default browser
+minikube service helloworld-service
+minikube service product-service
+
+#Get service URL
+minikube service helloworld-service --url
+minikube service product-service --url
+
+#Rolling Update
+#Re-build Docker image with new changes and add into Minikube Docker Registry
+docker build -t sboot/sboot-docker:v1 --build-arg JAR_FILE=./target/*.jar .
+
+#Deploy the new image
+kubectl set image deployment/sboot-docker  sboot-docker=sboot/sboot-docker:v2
+
+#Deploy service from manifest
+kubectl apply -f https://k8s.io/examples/service/load-balancer-example.yaml
+
+kubectl apply -f https://raw.githubusercontent.com/kubernetes/website/master/content/en/examples/controllers/nginx-deployment.yaml
+kubectl create -f emp-service.yaml
+
+##Clean up
+
+#Delete service
+kubectl delete services sboot-kube
+
+#Delete pod
+kubectl delete pods sboot-kube-<podname>
+(K8s enforces to start new pod upon deletion of existing pod to provide HA)
+
+#Delete deployment
+kubectl delete deployments sboot-kube
+
+#For Linux
+eval $(minikube docker-env -u)	=> Disabling Minikube Docker Daemon
+
+#Enabling Addons
+minikube addons enable heapster
+
+#List system pods and services
+kubectl get pods -n kube-system
+kubectl get services -n kube-system
+
+#Launch Addon Service
+minikube addons open heapster
+(Opens in the default browser)
